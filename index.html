@@ -78,7 +78,9 @@
         //Display each text
         for (var i in data) {
 
-            var fnam = data[i]["file"].split(".")[0];
+            var fnam = data[i]["file"].split(".");
+                fnam.pop();
+                fnam = fnam.join(".");
 
             result += `<tr>
                 <td><a href="text.html?${fnam}">${data[i]["title"]} ${data[i]["section"]?'-('+data[i]["order"]+') '+data[i]["section"]:''}</a></td>
