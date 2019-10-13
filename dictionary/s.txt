@@ -62,6 +62,15 @@ gloss bottom
 ms sotto
 
 
+@stà
+verb
+gloss to be (situated)
+
+present
+1s sto,stonco
+2s staje
+
+
 @stesso
 adjective
 gloss same, equal
