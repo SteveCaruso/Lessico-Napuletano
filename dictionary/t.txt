@@ -1,0 +1,89 @@
+@tanto
+adjective
+gloss so much, so many
+gloss much, many
+gloss such
+gloss significant
+ms tanto
+ms tantu
+note Used before words it modifies.
+fs tanta
+p tante
+bv tant'
+
+pronoun
+gloss much
+gloss a lot
+c tanto
+
+adverb
+gloss so much
+gloss very
+
+
+@tazza
+noun
+gloss cup
+fs tazza
+fp tazze
+
+
+@te
+pronoun
+gloss tonic and atonic 2nd person singular: you, to you
+reflexive 2nd person singular: yourself
+prepositional 2nd person singular
+
+c te
+c tte
+note Most often foun in atonic.
+bv t'
+
+
+@tené
+verb
+note This isn't done yet!!!
+present
+1s tengo
+2s tiene
+3s tene
+
+
+@tiempo
+noun
+gloss time
+ms tiempo
+mp tiempe
+
+
+@tre
+numeral
+gloss three
+c tre, trè, tréje
+
+
+@tu
+pronoun
+gloss personal 2nd person singular: you
+c tu
+
+
+@tutto
+adjective
+gloss all
+ms tutto
+fs tutta
+mp tutte, tutti
+fp tutte
+bv tutt'
+
+pronoun
+gloss everything, all
+gloss anything
+c tutto
+
+noun
+gloss whole
+ms tutto
+mp tutte
+

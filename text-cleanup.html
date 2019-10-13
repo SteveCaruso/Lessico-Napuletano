@@ -1,0 +1,330 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Clean Up Text</title>
+        <style>
+            a {
+                background-color:#ccc   ;
+                border-left:1px solid #000;
+            }
+            a:hover {
+                background-color:#fcc;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>Clean Up Text</h1>
+        
+        <textarea id="source" cols="80" rows="20"></textarea>
+        
+        <input id="doIt" type="button" value="Concordance"/>
+        <input id="doIt2" type="button" value="Tag"/>
+        <input id="doIt3" type="button" value="Tag Flatfile"/>
+        
+        <textarea id="result" cols="80" rows="20"></textarea>
+        
+        <div id="tagged"></div>
+        
+<script>
+
+    //References
+    var result = document.getElementById("result");
+    var source = document.getElementById("source");
+    var tagged = document.getElementById("tagged");
+    
+    //Button action
+    document.getElementById("doIt").addEventListener("click",()=>{
+        
+        var final = {};
+        
+        var r = source.value;
+        
+        //First, straighten quotes
+        r = r.replace(/[”“]/gi,'"');
+        //And apostrophes
+        r = r.replace(/[’‘]/gi,"'");
+        //Strip punctuation
+        r = r.replace(/[-–,.:;!?ª1234567890…„\)\(]/gi,"");
+        
+        //Kill returns
+        r = r.replace(/[\r\n]/gi," ");
+        //Kill whitespace
+        r = r.replace(/\s\s+/gi," ");
+        
+        //All lowercase
+        r = r.toLowerCase();
+        
+        //Harder stuff
+        
+        //Delete quotation marks that aren't apostrophes
+        r = r.replace(/(\s)"([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + c;
+        });
+        r = r.replace(/([a-zèéàáòóìíùú])'([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + "' " + c;
+        });
+        //Seperate out apostrophes
+        r = r.replace(/([a-zèéàáòóìíùú])"([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + "' '" + c;
+        });
+        //Seperate out apostrophes
+        r = r.replace(/([a-zèéàáòóìíùú])''([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + "' '" + c;
+        });
+        
+        //Seperate out 'n and 'm
+        r = r.replace(/\s'mm/gi,(a)=> {
+            return `\s'm\sm`;
+        });
+        r = r.replace(/\s'n[^(u\s|a\s)]/gi,(a)=> {
+            return `'n `;
+        });
+        
+        
+        r = r.trim();
+        
+        //And now begins the count!
+        r = r.split(" ");
+        
+        for(var i in r) {
+            var term = r[i];
+            if (final[term]) {
+                final[term].count++;
+            }
+            else final[term] = {
+                term:term,
+                count:1
+            };
+        }
+        
+        //Strip and collate
+        final = Object.values(final);
+        
+        //Sort the results
+        final = final.sort((a,b)=>{
+            if (b.count == a.count) {
+                if (a.term < b.term) return -1
+                if (a.term > b.term) return 1;
+                return 0;
+            }
+            return b.count-a.count;
+        });
+        
+        //Get ready for display
+        r = "";
+        
+        for (var i in final) {
+            r += final[i].count + ` : ` + final[i].term + `\n`;
+        }
+        
+        result.innerHTML = r;
+        
+    });
+    
+    //Button action
+    document.getElementById("doIt2").addEventListener("click",()=>{
+        
+        var final = {};
+        
+        var r = source.value;
+        
+        //First, straighten quotes
+        r = r.replace(/[”“]/gi,'"');
+        //And apostrophes
+        r = r.replace(/[’‘]/gi,"'");
+        //Strip punctuation
+        //r = r.replace(/[-–,.:;!?ª1234567890…„\)\(]/gi,"");
+        
+        //Kill returns
+        //r = r.replace(/[\r\n]/gi," ");
+        //Kill whitespace
+        r = r.replace(/\s\s+/gi," ");
+        
+        //All lowercase
+        //r = r.toLowerCase();
+        
+        //Harder stuff
+        
+        //Delete quotation marks that aren't apostrophes
+        r = r.replace(/(\s)"([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + `“` + c;
+        });
+        //Tag all words
+        r = r.replace(/([^\s\‘\’\“\”\-\–,.:;!?ª1234567890…„«»\)\(]+)/gi,(a)=> {
+            return `<span>`+a+`</span>`;
+        });
+        //Fix single abbreviations
+        r = r.replace(/([a-zèéàáòóìíùú])'([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + "'</span><span>" + c;
+        });
+        //Seperate out double abbreviations
+        r = r.replace(/([a-zèéàáòóìíùú])"([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + "'</span><span>'" + c;
+        });
+        //Seperate out double abbreviations
+        r = r.replace(/([a-zèéàáòóìíùú])''([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + "'</span><span>'" + c;
+        });
+        //Seperate out 'n and 'm
+        r = r.replace(/\>'mm/gi,(a)=> {
+            return `>'m</span><span>m`;
+        });
+        r = r.replace(/\>'n([^(u\s|a\s)])/gi,(a,b)=> {
+            return `>'n</span><span>` + b;
+        });
+        
+        //Add in data to spans
+        r = r.replace(/<span>([^<]+)<\/span>/gi,(a,b)=> {
+            return `<a class="term" target="lookup" href="../lookup.html#` + b.toLowerCase() + `">`+ b +`</a>`;
+        });
+        
+        //Add divs
+        r = '<div>'+ r.replace(/\n/gi,`</div>\n<div>`) + '</div>';
+        
+        //Headings!
+        //r = r.replace(/#([^\n]+)/gi,(a,b)=> {
+        //    return '<>' + b + '</h3>';
+        //});
+        
+        result.innerHTML = r;
+        tagged.innerHTML = r;
+        
+    });
+    
+    //Button action
+    document.getElementById("doIt3").addEventListener("click",()=>{
+        
+        var final = {};
+        
+        var r = source.value;
+        
+        //Break it up into lines
+        r = r.split('\n');
+        
+        for (var i in r) {
+            
+            var line = r[i];//.trim();
+            var token = line.substr(0,line.indexOf(' '));
+            var rest = line.substr(line.indexOf(' ')+1).trim();
+            var token2 = rest.substr(0,rest.indexOf(' '));
+            var rest2 = rest.substr(rest.indexOf(' ')+1).trim();
+            
+            if (token == "chapter" || token == "verse") {
+                
+            }
+            else {
+                //First, straighten quotes
+                line = line.replace(/[”“]/gi,'"');
+                //And apostrophes
+                line = line.replace(/[’‘]/gi,"'");
+                
+                //Now split up the words into chunks
+                line = line.replace(/[a-z'"]+/gi,(l) => {
+                    
+                    //console.log(a);
+                    
+                    //Fix single abbreviations
+                    l = l.replace(/([a-zêèéêâàáäôòóöîìíïûùúü])'([a-zêèéêâàáäôòóöîìíïûùúü])/gi,(a,b,c)=> {
+                        return b + "'+" + c;
+                    });
+                    
+                    //Seperate out double abbreviations
+                    l = l.replace(/([a-zêèéêâàáäôòóöîìíïûùúü])"([a-zêèéêâàáäôòóöîìíïûùúü])/gi,(a,b,c)=> {
+                        return b + "'+'" + c;
+                    });
+
+                    //Seperate out double abbreviations
+                    l = l.replace(/([a-zêèéêâàáäôòóöîìíïûùúü])''([a-zêèéêâàáäôòóöîìíïûùúü])/gi,(a,b,c)=> {
+                        return b + "'+'" + c;
+                    });
+                    
+                    //Seperate out 'n and 'm
+                    l = l.replace(/^'(m)(m|p)/gim,(a,b,c)=> {
+                        return `'` + b + `+` + c;
+                    });
+
+                    l = l.replace(/^'(n)([^(u\s|a\s|\'|copp)])/gim,(a,b,c)=> {
+                        return `'` + b + `+` + c;
+                    });
+
+                    return l;
+                    
+                });
+                
+                r[i] = line;
+                
+            }
+            
+        }
+        
+        /*
+        //First, straighten quotes
+        r = r.replace(/[”“]/gi,'"');
+        //And apostrophes
+        r = r.replace(/[’‘]/gi,"'");
+        //Strip punctuation
+        //r = r.replace(/[-–,.:;!?ª1234567890…„\)\(]/gi,"");
+        
+        //Kill returns
+        //r = r.replace(/[\r\n]/gi," ");
+        //Kill whitespace
+        r = r.replace(/\s\s+/gi," ");
+        
+        //All lowercase
+        //r = r.toLowerCase();
+        
+        //Harder stuff
+        
+        //Delete quotation marks that aren't apostrophes
+        r = r.replace(/(\s)"([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + `“` + c;
+        });
+        //Tag all words
+        r = r.replace(/([^\s\‘\’\“\”\-\–,.:;!?ª1234567890…„«»\)\(]+)/gi,(a)=> {
+            return `<span>`+a+`</span>`;
+        });
+        //Fix single abbreviations
+        r = r.replace(/([a-zèéàáòóìíùú])'([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + "'</span><span>" + c;
+        });
+        //Seperate out double abbreviations
+        r = r.replace(/([a-zèéàáòóìíùú])"([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + "'</span><span>'" + c;
+        });
+        //Seperate out double abbreviations
+        r = r.replace(/([a-zèéàáòóìíùú])''([a-zèéàáòóìíùú])/gi,(a,b,c)=> {
+            return b + "'</span><span>'" + c;
+        });
+        //Seperate out 'n and 'm
+        r = r.replace(/\>'mm/gi,(a)=> {
+            return `>'m</span><span>m`;
+        });
+        r = r.replace(/\>'n([^(u\s|a\s)])/gi,(a,b)=> {
+            return `>'n</span><span>` + b;
+        });
+        
+        //Add in data to spans
+        r = r.replace(/<span>([^<]+)<\/span>/gi,(a,b)=> {
+            return `<a class="term" target="lookup" href="../lookup.html#` + b.toLowerCase() + `">`+ b +`</a>`;
+        });
+        
+        //Add divs
+        r = '<div>'+ r.replace(/\n/gi,`</div>\n<div>`) + '</div>';
+        
+        //Headings!
+        //r = r.replace(/#([^\n]+)/gi,(a,b)=> {
+        //    return '<>' + b + '</h3>';
+        //});
+        */
+        
+        r = r.join('\n');
+        
+        result.innerHTML = r;
+        
+    });
+
+</script>
+
+    </body>
+</html>

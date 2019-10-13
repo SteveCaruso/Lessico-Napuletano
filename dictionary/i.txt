@@ -1,0 +1,29 @@
+@io
+        
+pronoun
+gloss personal 1st person singular: I
+c io, ij, i'
+
+
+@into
+preposition
+gloss in
+notes When prefixed to a noun it becomes 'n (into cielo = 'ncielo).
+notes When prefixed to a noun that starts with the letter m, it becomes 'm (into miezo = 'mmiezo).
+notes When combining with <a href="#ll'">ll'</a>, if the word <a href="#ll'">ll'</a> modifies is plural, an extra vowel can come at the end.
+combo noun 'n
+combo m-noun 'm
+combo vowel int',dint'
+combo 'o int''o, dint''o, int'ô
+combo 'a int''a, dint''a, int'â
+combo 'e int''e, dint''e, int'ê
+combo ll' int''all, dint''all
+combo ll'(pl.) int''alli, dint''alli
+
+
+@isso
+        
+pronoun
+gloss personal male 3rd person singular: he
+
+ms isso, isse

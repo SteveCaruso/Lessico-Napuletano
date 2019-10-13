@@ -1,0 +1,76 @@
+@ma
+conjunction
+gloss but
+
+@maje
+alt mai
+adverb
+gloss never
+gloss ever, always
+
+
+@malato
+adjective
+gloss ill, sick, unwell, affected, sore
+ms malato
+fs malata
+p malate
+
+
+@mano
+noun
+gloss hand
+fs mano, mana
+fp mane, mani
+
+
+@mare
+noun
+gloss sea
+ms mare
+
+
+@me
+pronoun
+gloss tonic and atonic 1st person singular: me, to me
+gloss reflexive 1st person singular: myself
+c me
+c mme
+bv m'
+bv mm'
+
+
+@metté
+verb
+aux avé
+gloss to put, place, set, set down
+remote
+3s mettette
+cite <a href="texts/'o-luciano-d''o-rre.html">'O luciano d''o Rre</a> 19: mettette 'a rinto, chillo 'mpiso? = What did he put in it, that villian?
+
+
+@mmiezo
+alt miezo
+preposition
+gloss in the middle of, in the midst of
+combo 'o mmiez''o, miez''o
+combo 'a mmiez''a, miez''a
+combo 'e mmiez''e, miez''e
+combo ll' mmiezo ll'
+
+noun
+gloss middle, midst
+ms mmiezo
+
+
+@mò
+alt mo', mo
+adverb
+gloss temporal: now
+
+
+@munno
+noun
+gloss world
+ms munno
+mp munne

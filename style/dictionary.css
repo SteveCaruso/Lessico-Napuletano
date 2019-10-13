@@ -1,0 +1,46 @@
+body {
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:120%;
+    padding-bottom:300px;
+}
+a {
+    color:black;
+    background-color:#eee;
+    text-decoration:none;
+    border-radius:3px;
+}
+a:hover {
+    color:white;
+    background-color:gray;
+    border:0px solid gray;
+    
+}
+:target {
+    background-color:#ff0;
+}
+table {
+    border:1px solid black;
+}
+td, th {
+    padding:5px;
+    border:1px solid black;
+    text-align:center;
+}
+h2 {
+    padding-top:1ex;
+    border-top:1px solid #aaa;
+}
+
+#result {
+    border-top: 1px solid gray;
+    margin-top:1em;
+}
+
+input {
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:120%;
+    border:1px solid gray;
+}
+input[type=submit] {
+    border-radius:5px;
+}

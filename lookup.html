@@ -1,0 +1,1253 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Dictionary Lookup &amp; Lexicon</title>
+        <link rel="stylesheet" href="style/dictionary.css">
+    </head>
+    <body>
+    
+        <form id="searchForm">
+            <input id="term"/>
+            <input type="submit" id="search" value="Search"/>
+            <input type="submit" id="viewList" value="View All Lemmas"/>
+        </form>
+        <div id="result"></div>
+        
+    <script>
+        
+        //BEWARE - There be Dragons Ahead
+
+        var fileList = ['a.txt',
+                        'b.txt',
+                        'c.txt',
+                        'd.txt',
+                        'e.txt',
+                        'f.txt',
+                        'g.txt',
+                        'h.txt',
+                        'i.txt',
+                        'j.txt',
+                        'k.txt',
+                        'l.txt',
+                        'm.txt',
+                        'n.txt',
+                        'o.txt',
+                        'p.txt',
+                        'q.txt',
+                        'r.txt',
+                        's.txt',
+                        't.txt',
+                        'u.txt',
+                        'v.txt',
+                        'w.txt',
+                        'x.txt',
+                        'y.txt',
+                        'z.txt'
+        ];
+        
+        var posList = ["noun",
+                       "adjective",
+                       "verb",
+                       "adverb",
+                       "preposition",
+                       "pronoun",
+                       "article",
+                       "exclamation",
+                       "name",
+                       "conjunction",
+                       "numeral"
+        ];
+        var substantiveList = ['c',
+                               's','ms','fs','cs',
+                               'p','mp','fp','cp',
+                               'ns','np',
+                               'bv','msbv','fsbv',
+                               'bc','msbc','fsbc'
+        ];
+        var verbTenseList = ['present',
+                             'imperfect',
+                             'remote',
+                             'future',
+                             'conditional',
+                             'subjunctive',
+                             'past-participle',
+                             'gerund'
+        ];
+        var verbPersonList = ["1s","2s","3s","1p","2p","3p","m","f","p"];
+        
+        var data = "";
+        var index = "";
+        
+        //Load the lexical data into memory
+        //Eventually handle multiple file loads
+        async function loadData() {
+            
+            var d = '';
+            
+            //Go over each text file
+            for (var i in fileList) {
+                
+                document.getElementById("result").innerHTML += '<p>Loading '+fileList[i]+'</p>';
+                
+                //Grab the appropriate text file
+                let result = await fetch('dictionary/'+fileList[i]);
+
+                //Turn the data into text
+                d += "\n";
+                d += await result.text();
+                
+            }
+
+            //Split the data up into lines
+            data = d.split("\n");
+            
+            document.getElementById("result").innerHTML = "";
+            
+        }
+        
+        //Find a word even by looking through fields other than the lemma
+        async function findWord(word) {
+            
+            if (data == '') await loadData();
+            
+            let lemmas = [];
+            let lemma = "";
+
+            //Then start going over each line until we find the lemma we want
+            for (var i=0; i<data.length; i++) {
+
+                let line = data[i];
+                let token = line.substr(0,line.indexOf(' '));
+                let rest = line.substr(line.indexOf(' ')+1).trim();
+
+                //If it's a lemma that matches
+                if (line.charAt(0) == "@") {
+                    
+                    lemma = line.substring(1).trim();
+
+                    if(lemma == word) {
+                        
+                        if (!lemmas[lemma]) lemmas[lemma] = true;
+                        
+                    }
+                    
+                }
+                else if(substantiveList.indexOf(token) > -1) {
+                    
+                    if (rest == word)
+                        if (!lemmas[lemma]) 
+                            lemmas[lemma] = true;
+
+                }
+                else if(verbPersonList.indexOf(token) > -1) {
+
+                    if (rest == word)
+                        if (!lemmas[lemma]) 
+                            lemmas[lemma] = true;
+
+                }
+            }
+            return lemmas.keys();
+            
+        }
+        
+        //Retrieve lemma data for a particular lemma
+        function retrieveLemma(lemma) {
+            
+            //if (data == '') await loadData();
+            
+            var startIndex = -1;
+            var endIndex = -1;
+
+            //Then start going over each line until we find the lemma we want
+            for (var i=0; i<data.length; i++) {
+
+                var line = data[i];
+
+                if (line.charAt(0) == "@") {
+
+                    if (startIndex == -1) {
+
+                        line = line.substring(1).trim();
+
+                        if (line == lemma) {
+
+                            startIndex = i;
+
+
+                        }
+
+                    }
+                    else {
+
+                        endIndex = i;
+
+                        break;
+
+                    }
+
+                }
+
+            }
+            
+            console.log(startIndex,endIndex);
+            
+            if (startIndex == -1) return false;
+
+            if (endIndex == -1) return data.slice(startIndex);
+
+            return data.slice(startIndex,endIndex);
+
+            
+        }
+        
+        function parseLemma(data) { 
+            
+            var result = "";
+            
+            var lemma = "";
+            
+            var pos = "";
+            var gender = "";
+            var tense = "";
+            
+            var xref = [];
+            var alt = [];
+            
+            var aux = "";
+            
+            var table = [];
+            var combos = [];
+            
+            var glossnum = 1;
+            var glosses = [];
+            
+            var citenum = 1;
+            var citations = [];
+            
+            var notenum = 1;
+            var notes = [];
+            
+            
+            //Helper functions
+            //Reset space
+            var resetSpace = () => {
+                pos = "";
+                gender = "";
+                tense = "";
+                xref = [];
+                alt = [];
+                aux = "";
+                table = [];
+                combos = [];
+                
+                glossnum = 1;
+                glosses = [];
+
+                citenum = 1;
+                citations = [];
+
+                notenum = 1;
+                notes = [];
+            };
+            
+            //Print glosses
+            var printAltSpelling = () => {
+                if (alt.length > 0) {
+                    result += `<div>also spelled: <strong>`;
+                    result += alt.join(', ');
+                    result += '</strong></div>';
+                }
+            };
+            
+            //Print glosses
+            var printGlosses = () => {
+                result += `<ol>`;
+                for(var i in glosses) {
+                    result += `<li>`+glosses[i]+`</li>`;
+                }
+                result += `</ol>`;
+            };
+            
+            //Print citations
+            var printCitations = () => {
+                if (citations.length > 0) {
+                    result += `<h4>Citations:</h4><ol>`;
+                    for(var i in citations) {
+                        result += `<li>`+citations[i]+`</li>`;
+                    }
+                    result += `</ol>`;
+                }
+            };
+            
+            //Print notes
+            var printNotes = () => {
+                if (notes.length > 0) {
+                    result += `<h3>Notes:</h3><ol>`;
+                    for(var i in notes) {
+                        result += `<li>`+notes[i]+`</li>`;
+                    }
+                    result += `</ol>`;
+                }
+            };
+            
+            //Print combos
+            var printCombos = () => {
+                
+                if (combos.length == 0) return;
+                    
+                //First, populate
+                var tree = {}; //console.log(combos);
+                for(var i in combos) {
+                    
+                    var entry = combos[i][1] + `<sup>`+combos[i].slice(2).join(", ")+`</sup>`;
+                    
+                    if (tree[combos[i][0]]) tree[combos[i][0]].push(entry);
+                    else tree[combos[i][0]] = [entry];
+                
+                }
+                
+                result += `<table>`;
+                
+                //Print headings
+                result += `<tr>`;
+                for(var i in tree) result += `<th>`+lemma+` + <a href="#`+i+`">`+i+`</a></th>`;
+                result += `</tr>`;
+                
+                //Print combinations
+                result += `<tr>`;
+                for(var i in tree) result += `<td>`+tree[i].join(",<br>")+`</td>`;
+                result += `</tr>`;
+                
+                result += `</table>`;
+                
+            }
+            
+            //Print noun
+            var printSubstantive = () => {
+                
+                result += `<h3>`+pos+`</h3>`;
+                
+                //Print alt spelling
+                printAltSpelling();
+                
+                //Print glosses
+                printGlosses();
+                
+                //Print noun table with cite and note #s
+                //First, populate
+                var tree = {};
+                for(var i in table) {
+                    
+                    var entry = table[i][1] + `<sup>`+table[i].slice(2).join(", ")+`</sup>`;
+                    
+                    if (tree[table[i][0]]) tree[table[i][0]].push(entry);
+                    else tree[table[i][0]] = [entry];
+                
+                }
+                
+                //Figure out what we have
+                //Singular
+                let c = tree["c"] ? true : tree["c"] ? true : false;
+                let m = tree["ms"] ? true : tree["mp"] ? true : false;
+                let f = tree["fs"] ? true : tree["fp"] ? true : false;
+                let n = tree["ns"] ? true : tree["np"] ? true : false;
+                //Singular/plural
+                let s = tree["ms"] ? true : tree["fs"] ? true : tree["ns"] ? true : false;
+                let p = tree["mp"] ? true : tree["fp"] ? true : tree["np"] ? true : false;
+                //Common plural
+                let pp = tree["p"] ? true : false;
+                //Before vowels and consonants
+                let bv = tree["bv"] ? true : false;
+                let bc = tree["bc"] ? true : false;
+                
+                result += `<table>`;
+                
+                //Headings
+                result += `<tr><th></th>`;
+                if (m) result += `<th>masculine</th>`;
+                if (f) result += `<th>feminine</th>`;
+                if (n) result += `<th>neuter</th>`;
+                if (m+f+n == 0) result += `<th>common</th>`;
+                result += `</tr>`;
+                
+                //Common
+                if (c) {
+                    result += `<tr><th>common</th>`;
+                    if (c) result += `<td>`+(tree['c']?tree['c'].join(",<br>"):'')+`</td>`;
+                    result += `</tr>`;
+                }
+                
+                //Singular
+                if (s) {
+                    result += `<tr><th>singular</th>`;
+                    if (c) result += `<td>`+(tree['c']?tree['c'].join(",<br>"):'')+`</td>`;
+                    if (m) result += `<td>`+(tree['ms']?tree['ms'].join(",<br>"):'')+`</td>`;
+                    if (f) result += `<td>`+(tree['fs']?tree['fs'].join(",<br>"):'')+`</td>`;
+                    if (n) result += `<td>`+(tree['ns']?tree['ns'].join(",<br>"):'')+`</td>`;
+                    result += `</tr>`;
+                }
+                
+                //Plural
+                if (p) {
+                    result += `<tr><th>plural</th>`;
+                    if (c) result += `<td>`+(tree['c']?tree['c'].join(",<br>"):'')+`</td>`;
+                    if (m) result += `<td>`+(tree['mp']?tree['mp'].join(",<br>"):'')+`</td>`;
+                    if (f) result += `<td>`+(tree['fp']?tree['fp'].join(",<br>"):'')+`</td>`;
+                    if (n) result += `<td>`+(tree['np']?tree['np'].join(",<br>"):'')+`</td>`;
+                    result += `</tr>`;
+                }
+                if (pp) {
+                    result += `<tr><th>plural</th>`;
+                    result += `<td colspan="`+(m+f+n)+`">`+(tree['p']?tree['p'].join(",<br>"):'')+`</td>`;
+                    result += `</tr>`;
+                }
+                
+                //Before vowel
+                if (bv) {
+                    result += `<tr><th>before vowel</th>`;
+                    result += `<td colspan="`+(m+f+n)+`">`+(tree['bv']?tree['bv'].join(",<br>"):'')+`</td>`;
+                    result += `</tr>`;
+                }
+                
+                //Before consonant
+                if (bc) {
+                    result += `<tr><th>before consonant</th>`;
+                    result += `<td colspan="`+(m+f+n)+`">`+(tree['bc']?tree['bc'].join(",<br>"):'')+`</td>`;
+                    result += `</tr>`;
+                }
+                
+                result += `</table>`;
+                
+                //Print combos
+                printCombos();
+                
+                //Print citations
+                printCitations();
+                
+                //Print notes
+                printNotes();
+                                        
+            }; //end printNoun
+            
+            //Print preposition
+            var printPreposition = () => {
+                
+                result += `<h3>preposition</h3>`;
+                
+                //Print alt spelling
+                printAltSpelling();
+                
+                //Print glosses
+                printGlosses();
+                
+                /*
+                //Print preposition table with cite and note #s
+                //First, populate
+                var tree = {}; console.log(table);
+                for(var i in table) {
+                    
+                    var entry = table[i][1] + `<sup>`+table[i].slice(2).join(", ")+`</sup>`;
+                    
+                    if (tree[table[i][0]]) tree[table[i][0]].push(entry);
+                    else tree[table[i][0]] = [entry];
+                
+                }
+                
+                result += `<table>`;
+                
+                //Print headings
+                result += `<tr>`;
+                for(var i in tree) result += `<th>`+lemma+` + <a href="#`+i+`">`+i+`</a></th>`;
+                result += `</tr>`;
+                
+                //Print combinations
+                result += `<tr>`;
+                for(var i in tree) result += `<td>`+tree[i].join(",<br>")+`</td>`;
+                result += `</tr>`;
+                
+                result += `</table>`;*/
+                
+                //Print combos
+                printCombos();
+                
+                //Print citations
+                printCitations();
+                
+                //Print notes
+                printNotes();
+                                        
+            }; //end printPreposition
+            
+            //Print adverb
+            var printAdverb = () => {
+                
+                result += `<h3>`+pos+`</h3>`;
+                
+                //Print alt spelling
+                printAltSpelling();
+                
+                //Print glosses
+                printGlosses();
+                
+                //Print combos
+                printCombos();
+                
+                //Print citations
+                printCitations();
+                
+                //Print notes
+                printNotes();
+                                        
+            }; //end printAdverb
+            
+            //Print verb
+            var printVerb = () => {
+                
+                result += `<h3>verb</h3>`;
+                
+                //Print alt spelling
+                printAltSpelling();
+                
+                //Print glosses
+                printGlosses();
+                
+                //Verb table
+                //Print noun table with cite and note #s
+                //First, populate
+                var tree = {};
+                for(var i in table) {
+                    
+                    var entry = '<span id="'+table[i][1]+'">'+table[i][1]+'</span>' + `<sup>`+table[i].slice(2).join(", ")+`</sup>`;
+                    
+                    if (tree[table[i][0]]) tree[table[i][0]].push(entry);
+                    else tree[table[i][0]] = [entry];
+                
+                }
+                
+                let autoParse = parseVerb(lemma);
+                
+                let printForm = (form) => {
+                    
+                    return (tree[form] ? '<span class="irregularForm">'+tree[form].join(",<br>")+'</span>' : '<span class="regularForm" id="'+autoParse[form]+'">'+autoParse[form]+'</span>');
+                    
+                }
+                
+                result += `<table>`;
+                
+                //Headings
+                result += `<tr><th rowspan="2">auxiliary:<br><a href="#`+aux+`">`+aux+`</a></th>`;
+                result += `<th colspan="3">singular</th>`;
+                result += `<th colspan="3">plural</th>`;
+                result += `</tr>`;
+                result += `<tr>`;
+                result += `<th>1st person</th>`;
+                result += `<th>2nd person</th>`;
+                result += `<th>3rd person</th>`;
+                result += `<th>1st person</th>`;
+                result += `<th>2nd person</th>`;
+                result += `<th>3rd person</th>`;
+                result += `</tr>`;
+                
+                let printVerbForm = (name) => {
+                    result += `<tr><th>`+name+`</th>`;
+                    result += `<td>`+printForm(name+' 1s')+`</td>`;
+                    result += `<td>`+printForm(name+' 2s')+`</td>`;
+                    result += `<td>`+printForm(name+' 3s')+`</td>`;
+                    result += `<td>`+printForm(name+' 1p')+`</td>`;
+                    result += `<td>`+printForm(name+' 2p')+`</td>`;
+                    result += `<td>`+printForm(name+' 3p')+`</td>`;
+                    result += `</tr>`;
+                }
+                
+                printVerbForm("present");
+                printVerbForm("imperfect");
+                printVerbForm("remote");
+                printVerbForm("future");
+                printVerbForm("conditional");
+                printVerbForm("subjunctive");
+                
+                //Past participle
+                result += `<tr>
+                                <th></th>
+                                <th colspan="2">masculine</th>
+                                <th colspan="2">feminine</th>
+                                <th colspan="2">plural</th>
+                            </tr>`;
+                
+                result += `<tr><th>past participle</th>`;
+                result += `<td colspan="2">`+printForm('past-participle m')+`</td>`;
+                result += `<td colspan="2">`+printForm('past-participle f')+`</td>`;
+                result += `<td colspan="2">`+printForm('past-participle p')+`</td>`;
+                result += `</tr>`;
+                
+                //Gerund
+                result += `<tr><th>gerund</th>`;
+                result += `<td colspan="6">`+printForm('gerund')+`</td>`;
+                result += `</tr>`;
+                
+                
+                result += `</table>`;
+                
+                //Print citations
+                printCitations();
+                
+                //Print notes
+                printNotes();
+                
+                //console.log(table);
+                                        
+            }; //end printVerb
+            
+            //Print adverb
+            var printCrossRef = () => {
+                
+                //Print alt spelling
+                printAltSpelling();
+                
+                result += `<h3>see: `+xref.join(", ")+`</h3>`;
+                
+                //Print glosses
+                printGlosses();
+                
+                //Print citations
+                printCitations();
+                
+                //Print notes
+                printNotes();
+                                        
+            }; //end printAdverb
+            
+            //Print and reset
+            var printAndReset = () => {
+                if (pos == "adjective"
+                    ||pos == "noun"
+                    ||pos == "article"
+                    ||pos == "pronoun"
+                    ||pos == "name"
+                    ||pos == "numeral") printSubstantive();
+                else if (pos == "preposition") printPreposition();
+                else if (pos == "adverb" 
+                         || pos == "conjunction"
+                         || pos == "exclamation") printAdverb();
+                else if (pos == "verb") printVerb();
+                else if (pos == "xref") printCrossRef();
+                resetSpace();
+            };
+            
+            
+            for (var i=0; i<data.length; i++) {
+                
+                line = data[i];
+                token = line.substr(0,line.indexOf(' '));
+                rest = line.substr(line.indexOf(' ')+1).trim();
+                
+                //Nab lemma
+                if (line.charAt(0) == "@") { console.log("lemma found");
+                    
+                    //If it's not empty, finish last output
+                    if (lemma != "") printAndReset();
+                    
+                    //Snag new lemma
+                    lemma = line.substring(1);
+                    result += `<h2 id="${lemma}">${lemma}</h2>`;
+                    
+                }
+                //Alternate spellings
+                else if (token == "alt") {
+                    if (pos == "")
+                        result += `<div>also spelled: <strong id="`+rest+`">` + rest + `</strong></div>`;
+                    else alt.push(rest);
+                }
+                //POS Declaration to switch mode
+                else if (posList.indexOf(line) > -1) {
+                    
+                    //Finish off last mode
+                    printAndReset();
+                    
+                    //Set current POS
+                    pos = line;
+                    
+                }
+                //Others by POS mode
+                else {
+                    
+                    //Glosses - the pos doesn't matter
+                    if (token == "gloss") {
+
+                        glosses.push(rest);
+
+                    }
+                    
+                    //Citations
+                    else if (token == "cite") { 
+
+                        //Link citation to table entry if it comes after
+                        if (table.length > 0) {
+                            table[table.length-1].push("c"+citenum);
+                            citenum++;
+                        }
+
+                        citations.push(rest);
+
+                    }
+                    //Notes
+                    else if (token == "note" || token == "notes") {
+
+                        //Link citation to table entry if it comes after
+                        if (table.length > 0) {
+                            table[table.length-1].push(notenum);
+                            notenum++;
+                        }
+
+                        notes.push(rest);
+
+                    }
+                    
+                    //Now by POS - some of these can be optimized
+                    
+                    //Nouns just handle the table
+                    /*
+                    else if (pos == "noun" || pos == "article" || pos == "name") {
+                        
+                        //For the table
+                        if (substantiveList.indexOf(token) > -1) {
+                            
+                            let entries = rest.trim().split(',');
+                            for (var e in entries) 
+                                table.push([token,entries[e].trim()]);
+                            
+                        }
+                        
+                    }*/
+                    
+                    //Adjectives just handle the table, plus a few odd bits
+                    else if (pos == "adjective" || pos == "pronoun" || pos == "preposition" || pos == "noun" || pos == "article"  || pos == "name" || pos == "adverb" || pos == "numeral") {
+                        
+                        //For the table
+                        if (substantiveList.indexOf(token) > -1) {
+                            
+                            if (token == "msbv") {
+                                table.push(['ms',rest.trim(),notenum]);
+                                notenum++;
+                                notes.push("before a vowel");
+                            }
+                            else if (token == "msbc") {
+                                table.push(['ms',rest.trim(),notenum]);
+                                notenum++;
+                                notes.push("before a consonant");
+                            }
+                            else {
+                                let entries = rest.trim().split(',');
+                                for (var e in entries) 
+                                    table.push([token,entries[e].trim()]);
+                            }
+                            
+                        }
+                        //For the table
+                        else if (token == "combo") {
+                            
+                            //console.log(rest);
+                            
+                            let combo = rest.trim().substr(0,rest.indexOf(' '));
+                            let combine = rest.trim().substr(rest.indexOf(' ')+1).trim();
+                                combine = combine.split(",");
+                            for (var c in combine)
+                                combos.push([combo,combine[c].trim()]);
+                            
+                        }
+                        
+                    }
+                    
+                    //Preposoitions have their own tables of combos
+                    //else if (pos == "preposition") {
+                        
+                        
+                        
+                    //}
+                    
+                    //Verbs are effing complex
+                    else if (pos == "verb") {
+                        
+                        //For the table
+                        if (verbTenseList.indexOf(line.trim()) > -1) {
+                            tense = line;
+                        }
+                        else if (token == "aux") {
+                            aux = rest;
+                        }
+                        else if (token == "gerund") {
+                            let combine = rest.split(",");
+                            for (var c in combine)
+                                table.push(["gerund",combine[c].trim()]);
+                        }
+                        else if (verbPersonList.indexOf(token) > -1){
+                            
+                            let combine = rest.split(",");
+                            for (var c in combine)
+                                table.push([tense+' '+token,combine[c].trim()]);
+                            
+                            
+                        }
+                        
+                    }
+                    
+                    //Cross reference
+                    else if (token == "xref") {
+                        
+                        pos = "xref";
+                        xref.push(`<a href="#`+rest+`">`+rest+`</a>`);
+                        
+                    }
+                    
+                    
+                }
+                
+            }
+            
+            //If it's over, dump what's done
+            printAndReset();
+            
+            return result;
+            
+        }
+        
+        function parseVerb(verb) {
+
+            //Verb output
+
+            //Determine verb class
+            var vClass = false;
+
+            if (verb.slice(-6) == "iscere") {
+                vClass = "iscere";
+            }
+            else if (verb.slice(-3) == "ere") {
+                vClass = "ere";
+            }
+            else if (verb.slice(-1) == "à") {
+                vClass = "a";
+            }
+            else if (verb.slice(-1) == "é") {
+                vClass = "e";
+            }
+            else if (verb.slice(-1) == "ì") {
+                vClass = "i";
+            }
+
+            //Determine the root
+            var root = verb.substring(0,verb.length-vClass.length);
+            var root2, root3;
+
+            //Regex stuff
+            var firstVowel = /([^aeiouáéíóúàèìòù]*)([aeiouáéíóúàèìòù])(.*)/;
+            var lastVowel = /(.*)([aeiouáéíóúàèìòù])(.*)/;
+
+            //Other roots
+            let lv = lastVowel.exec(root);
+            if (lv == null) {
+                root2 = root;
+                root3 = root;
+                rootpu = root;
+            }
+            else if (lv[2] == "e") {
+                root2 = lv[1] + "i" + lv[3];
+                root3 = root;
+                rootpu = lv[1] + "é" + lv[3];
+            }
+            else if (lv[2] == "o") {
+                root2 = lv[1] + "u" + lv[3];
+                root3 = lv[1] + "u" + lv[3];
+                rootpu = lv[1] + "ò" + lv[3];
+            }
+            else {
+                root2 = root;
+                root3 = root;
+                rootpu = lv[1] + {"a":"à","e":"é","i":"í","o":"ò","u":"ù"}[lv[2]] + lv[3];
+            }
+
+            //Build the verb tree
+            var result = {};
+
+            //Add class
+            result.class = vClass;
+
+            //Presente
+            if (vClass == "a") {
+
+                result["present 1s"] = root+"o";
+                result["present 2s"] = root2+"e";
+                result["present 3s"] = root+"a";
+
+                result["present 1p"] = root3+"ammo";
+                result["present 2p"] = root3+"ate";
+                result["present 3p"] = rootpu+"ano";
+
+            }
+            else if (vClass == "e" || vClass=="ere") {
+
+                result["present 1s"] = root+"o";
+                result["present 2s"] = root2+"e";
+                result["present 3s"] = root+"e";
+
+                result["present 1p"] = root3+"immo";
+                result["present 2p"] = root3+"ite";
+                result["present 3p"] = rootpu+"eno";
+
+            }
+            else if (vClass == "i") {
+
+                result["present 1s"] = root+"o";
+                result["present 2s"] = root2+"e";
+                result["present 3s"] = root+"e";
+
+                result["present 1p"] = root3+"immo";
+                result["present 2p"] = root3+"ite";
+                result["present 3p"] = rootpu+"ono";
+
+            }
+            else if (vClass == "iscere") {
+
+                result["present 1s"] = root+"isco";
+                result["present 2s"] = root2+"isce";
+                result["present 3s"] = root+"esce";
+
+                result["present 1p"] = root3+"immo";
+                result["present 2p"] = root3+"ite";
+                result["present 3p"] = rootpu+"ìsceno";
+
+            }
+
+            //Gerrunio
+            if (vClass == "a") {
+                result["gerund"] = root + "anno";
+            }
+            else if (vClass == "e" || vClass == "i") {
+                result["gerund"] = root + "enno";
+            }
+            else if (vClass == "iscere") {
+                result["gerund"] = root + "iscenno";
+            }
+            else if (vClass == "ere") {
+                result["gerund"] = "a" + root + "enne";
+            }
+
+            //Passato a pocco
+
+            if (vClass == "e" || vClass == "i") {
+
+                result["past-participle m"] = root + "uto";
+                result["past-participle f"] = root + "uta";
+                result["past-participle p"] = root + "ute";
+
+            }
+            else if (vClass == "iscere") {
+
+                result["past-participle m"] = root + "sciuto";
+                result["past-participle f"] = root + "sciuta";
+                result["past-participle p"] = root + "sciute";
+
+            }
+            else if (vClass == "ere") {
+
+                result["past-participle m"] = root + "iuto";
+                result["past-participle f"] = root + "iuta";
+                result["past-participle p"] = root + "iute";
+
+            }
+            else { //(vClass == "a") {
+
+                result["past-participle m"] = root + "ato";
+                result["past-participle f"] = root + "ata";
+                result["past-participle p"] = root + "ate";
+
+            }
+
+            //Passato
+
+            if (vClass == "a") {
+
+                result["imperfect 1s"] = root+"avo";
+                result["imperfect 2s"] = root+"ave";
+                result["imperfect 3s"] = root+"ava";
+
+                result["imperfect 1p"] = root+"àvemmo";
+                result["imperfect 2p"] = root+"àveve";
+                result["imperfect 3p"] = root+"àveno";
+
+            }
+            else {
+
+                result["imperfect 1s"] = root+"evo";
+                result["imperfect 2s"] = root+"ive";
+                result["imperfect 3s"] = root+"eva";
+
+                result["imperfect 1p"] = root+"évemmo";
+                result["imperfect 2p"] = root+"ìveve";
+                result["imperfect 3p"] = root+"éveno";
+
+            }
+
+            //Passato d'assaje
+
+            if (vClass == "a") {
+
+                result["remote 1s"] = root+"aje";
+                result["remote 2s"] = root+"aste";
+                result["remote 3s"] = root+"aje";
+
+                result["remote 1p"] = root+"àjeme";
+                result["remote 2p"] = root+"asteve";
+                result["remote 3p"] = root+"àjene";
+
+            }
+            else if (vClass == "e") {
+
+                result["remote 1s"] = root+"jette";
+                result["remote 2s"] = root+"iéste";
+                result["remote 3s"] = root+"ette";
+
+                result["remote 1p"] = root+"étteme";
+                result["remote 2p"] = root+"isteve";
+                result["remote 3p"] = root+"éttene";
+
+            }
+            else {
+
+                result["remote 1s"] = root+"ette";
+                result["remote 2s"] = root+"iste";
+                result["remote 3s"] = root+"ette";
+
+                result["remote 1p"] = root+"étteme";
+                result["remote 2p"] = root+"isteve";
+                result["remote 3p"] = root+"éttene";
+
+            }
+
+            //Futuro
+
+            result["future 1s"] = root+"arraggio";
+            result["future 2s"] = root+"arraje";
+            result["future 3s"] = root+"arrà";
+
+            result["future 1p"] = root+"arrammo";
+            result["future 2p"] = root+"arrate";
+            result["future 3p"] = root+"arrano";
+
+            //Subjunctive
+
+            if (vClass == "a") {
+
+                result["subjunctive 1s"] = root+"asse";
+                result["subjunctive 2s"] = root+"asse";
+                result["subjunctive 3s"] = root+"asse";
+
+                result["subjunctive 1p"] = root+"àssemo";
+                result["subjunctive 2p"] = root+"àsseve";
+                result["subjunctive 3p"] = root+"àsseno";
+
+            }
+            else {
+
+                result["subjunctive 1s"] = root+"esse";
+                result["subjunctive 2s"] = root+"isse";
+                result["subjunctive 3s"] = root+"esse";
+
+                result["subjunctive 1p"] = root+"éssemo";
+                result["subjunctive 2p"] = root+"ìsseve";
+                result["subjunctive 3p"] = root+"ésseno";
+
+            }
+
+            //Conditional
+            result["conditional 1s"] = root+"arría";
+            result["conditional 2s"] = root+"arrísse";
+            result["conditional 3s"] = root+"arría";
+
+            result["conditional 1p"] = root+"arríamo";
+            result["conditional 2p"] = root+"arrísseve";
+            result["conditional 3p"] = root+"arríano";
+
+            //console.log(result);
+
+            return result;
+        }
+        
+        function generateIndex() {
+            
+            var index = {};
+            
+            for (var i=0; i<data.length; i++) {
+                
+                var line = data[i];
+                
+                //Nab lemma
+                if (line.charAt(0) == "@") {
+                    index[line.substring(1).trim()] = '';
+                }
+                
+            }
+            
+            return Object.keys(index);
+            
+        }
+        
+        function generateSearchIndex() {
+            
+            var index = {};
+            var lemma = "";
+            
+            var addEntry = (entry,lem) => {
+                if (index[entry]) {
+                    if (index[entry][lem]) {
+                        index[entry][lem]++;
+                    }
+                    else {
+                        index[entry][lem] = 1;
+                    }
+                    
+                }
+                else {
+                    index[entry] = {};
+                    index[entry][lem] = 1;
+                }
+            };
+            
+            for (var i=0; i<data.length; i++) {
+                
+                var line = data[i];
+                var token = line.substr(0,line.indexOf(' '));
+                var rest = line.substr(line.indexOf(' ')+1).trim();
+                var token2 = rest.substr(0,rest.indexOf(' '));
+                var rest2 = rest.substr(rest.indexOf(' ')+1).trim();
+                
+                //Nab lemma
+                if (line.charAt(0) == "@") {
+                    lemma = line.substring(1).trim();
+                    addEntry(lemma, lemma);
+                }
+                else if (substantiveList.indexOf(token) > -1) {
+                    rest.split(',').forEach((str) => {
+                        addEntry(str.trim(), lemma);
+                    });
+                }
+                else if (verbPersonList.indexOf(token) > -1) {
+                    rest.split(',').forEach((str) => {
+                        addEntry(str.trim(), lemma);
+                    });
+                }
+                else if (token == "alt") {
+                    rest.split(',').forEach((str) => {
+                        addEntry(str.trim(), lemma);
+                    });
+                }
+                else if (token == "combo") {
+                    rest2.split(',').forEach((str) => {
+                        addEntry(str.trim(), lemma);
+                    });
+                }
+                else if (token == "gerund") {
+                    rest.split(',').forEach((str) => {
+                        addEntry(str.trim(), lemma);
+                    });
+                }
+                //Sloppy method (fix later)
+                else if (line == "verb") {
+                    let verb = parseVerb(lemma);
+                    for (var v in verb) if (v != "class") {
+                        addEntry(verb[v], lemma);
+                    }
+                }
+            }
+            
+            //Fix index
+            for (var i in index) {
+                
+                index[i] = Object.keys(index[i]);
+                
+            }
+            
+            /*
+            var res = document.getElementById('result');
+            
+            var result = '<textarea cols="80" rows="30">';
+            
+            for(var i in index) {
+                
+                result += i + ":" + Object.keys(index[i]).join(',') + "\n";
+                
+            }
+            
+            result += '</textarea>';
+            
+            res.innerHTML = result;
+            */
+            
+            return index;
+            
+        }
+        
+        //Search for a word when it's time
+        async function lookup() {
+            
+            var display = document.getElementById("result");
+                display.innerHTML = "";
+            
+            if (data === "") await loadData();
+            if (index === "") index = generateSearchIndex();
+            
+            let showIndex = () => {
+                var index = generateIndex();
+                var result = '<h2>Index of Lemmas:</h2><ul>';
+                index.forEach((item)=>{
+                    result += `<li><a href="#${item}">${item}</a></li>`;
+                });
+                result += `</ul><h4>${index.length} entries.</h4>`;
+                display.innerHTML += result; 
+            };
+            
+            if (document.location.hash == "") {
+                showIndex();
+                return;
+            }
+            
+            var word = decodeURIComponent(document.location.hash.substring(1));
+
+            if (index[word]) {
+                display.innerHTML += `<h1>${index[word].length} Result${index[word].length>1?'s':''} Found For &quot;${word}&quot;</h1>`;
+                for (var l in index[word]) {
+                    let lem = retrieveLemma(index[word][l]);
+                    display.innerHTML += parseLemma(lem);
+                }
+            }
+            
+            else {
+                if (word !== "") display.innerHTML += `<h1>No Results Found For &quot;${word}&quot;</h1>`;
+                showIndex();
+                return;
+            }
+            
+        }
+        
+        window.addEventListener("load",lookup);
+        window.addEventListener("hashchange",lookup);
+        
+        document.getElementById("viewList").addEventListener("click",(e) => {
+            
+            document.getElementById("term").value = "";
+
+        });
+
+        document.getElementById("searchForm").addEventListener("submit",(e) => {
+            
+            e.preventDefault();
+            e.stopPropagation();
+            document.location.hash = document.getElementById("term").value;
+            return false;
+            
+        });
+        
+    </script>
+        
+    </body>
+</html>

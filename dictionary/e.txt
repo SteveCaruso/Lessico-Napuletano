@@ -1,0 +1,85 @@
+@'e
+xref de
+xref 'o
+
+
+@e
+conjunction
+gloss and
+
+
+@embè
+conjunction
+gloss ok, now, so, well, however
+
+
+@èssere
+verb
+gloss to be
+
+aux èssere
+
+present
+1s sogno
+1s so'
+note causes doubling of the next consonant
+2s sî,sì
+3s è
+1p simmo
+2p site
+3p sogno
+3p so'
+note causes doubling of the next consonant
+3p songono,sógnono
+note older form
+
+imperfect
+1s ero, evo
+1s era
+note older form
+2s ire, ive
+2s era
+note older form
+3s era, ira
+1p èramo
+2p ìreve, jèreve
+3p èrano
+
+remote
+1s fuje, fui
+2s fuste
+3s fuje, fove, fu
+1p fùjemo,fujemo
+2p fùsteve,fusteve
+3p fujeno,fùrono
+
+future
+1s sarràggio
+2s sarràje
+3s sarrà
+1p sarràmmo, sarrìmmo
+2p sarràte
+3p sarràno
+
+conditional
+1s sarrìa
+2s sarrìsse
+3s sarrìa
+1p sarrìammo
+2p sarrìsseve,sarrìssevo
+3p sarrìano
+
+subjunctive
+1s fosse
+2s fusse, fosse
+3s fosse
+1p fossemo,fòssemo
+2p fusseve,fùssevo
+3p fosseno
+
+past-participle
+m stato
+f stata
+p state
+
+gerund sènno,essenno

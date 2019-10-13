@@ -1,0 +1,54 @@
+@ve
+pronoun
+gloss 2nd person plural atonic: you, to you
+gloss 2nd person plural reflexive: yourself
+gloss formal/polite 2nd person singular atonic: you, to you
+gloss formal/polite 2nd person singular reflexive: yourself
+c ve
+bv v'
+
+@via
+noun
+gloss road, street, path
+gloss way, route
+fs via
+fp vie
+
+@vizio
+noun
+gloss defect
+gloss vice, bad habit
+nm vizio
+np vizie
+
+@vota
+noun
+gloss time, instance, occasion
+gloss turn
+fs vota
+fp vote
+
+@votà
+verb
+gloss to turn
+aux avé
+
+@vulé
+verb
+gloss to want
+present
+1s voglio
+1s vogl'
+2s vuo',vuó, vuò
+3s vo', vô
+1p vulimmo
+2p vulite
+3p vonno
+conditional
+1s vurría
+2s vurrísse
+3s vurría
+1p vurríammo
+2p vurrísseve
+3p vurríano
+

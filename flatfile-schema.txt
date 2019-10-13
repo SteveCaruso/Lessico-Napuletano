@@ -1,0 +1,214 @@
+@lemma
+
+noun m|f|n
+ms masculine singular spelling, commas delimit alternates
+fs feminine singular spelling
+ns neuter singular
+s singular any spelling
+mp masculine plural
+fp feminine plural
+np neuter plural
+p plural any spelling
+bv before vowel
+bc before consonant
+"custom" whatever custom spelling listed
+gloss Gloss written here.
+cite source.html Citation for gloss 1
+gloss Second gloss
+gloss * Second gloss, subsection 1.
+gloss ** Subsection of subsection.
+notes Notes go here.
+notes * Same deal as glosses.
+
+adjective
+ms masculine singular spelling, commas delimit alternates
+fs feminine singular spelling
+ns neuter singular
+s singular any spelling
+mp masculine plural
+fp feminine plural
+np neuter plural
+p plural any spelling
+bv before vowel
+bc before consonant
+"custom" whatever custom spelling listed
+combo lemma|vowel|consonant form
+gloss etc.
+cite etc.
+notes etc.
+
+article
+ms etc.
+gloss etc.
+cite etc.
+notes etc.
+
+adverb
+gloss etc.
+cite etc.
+notes etc.
+
+exclamation
+gloss etc.
+cite etc.
+notes etc.
+
+pronoun
+nominative
+atonic
+tonic
+reflexive
+possessive
+prepositional
+interrogative
+relative
+[after each keyword]
+ms etc.
+gloss etc.
+cite etc.
+notes etc.
+
+preposition
+combo lemma|vowel|consonant form
+gloss etc.
+cite etc.
+notes etc.
+
+verb
+aux èssere|avé
+present
+1s
+cite etc.
+notes etc. [after each person/number, and below]
+2s
+3s
+1p
+2p
+3p
+imperfect
+remote
+future
+conditional
+subjunctive
+past-participle
+ms
+fs
+s
+mp
+fp
+p
+gerund [here]
+gloss etc.
+cite etc.
+notes etc.
+
+# Examples
+
+@'o
+article
+gloss definite: the
+notes Combines with a number of prepositions, such as @pe, @cu, @da, and others.
+ms 'o
+fs 'a
+ns 'o
+p 'e
+bv ll'
+
+@nu
+article
+gloss indefinite: a/an
+notes 
+ms nu, 'nu, unu
+fs na, 'na, una
+bv n'
+
+
+@de
+article
+gloss genitive: of
+notes Combines with a number of prepositions, such as @pe, @cu, @da, and others.
+bc d'
+bv 'e
+
+
+@ncoppo
+
+preposition
+gloss on, on top of
+gloss above
+
+adverb
+combo 'o ncopp''o, ncopp'ô
+combo 'a ncopp''a, ncopp'â
+combo 'e ncopp''e, ncopp'ê
+combo ll' ncoppo ll'
+combo da ncopp'a
+gloss up
+gloss on top
+gloss above
+
+noun m
+gloss top
+
+
+
+
+
+@èssere
+verb
+aux èssere
+
+present
+1s sogno, so'
+2s sî
+3s è
+1p simmo
+2p site
+3p sogno, so'
+
+imperfect
+1s ero, evo
+2s ire, ive
+3s era, ira
+1p èramo
+2p ìreve
+3p èrano
+
+remote
+1s fuje, fui
+2s fuste
+3s fuje, fove
+1p fusteve
+2p ìreve
+3p fujeno
+
+future
+1s sarràggio
+2s sarràje
+3s sarrà
+1p sarràmmo, sarrìmmo
+2p sarràte
+3p sarràno
+
+conditional
+1s sarrìa
+2s sarrìsse
+3s sarrìa
+1p sarrìammo
+2p sarrìsseve
+3p sarrìano
+
+subjunctive
+1s fosse
+2s fusse, fosse
+3s fosse
+1p fossemo
+2p fusseve
+3p fosseno
+
+past-participle
+m stato
+f stata
+p state
+
+gerund sènno

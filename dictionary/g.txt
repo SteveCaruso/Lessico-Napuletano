@@ -1,0 +1,33 @@
+@gente
+alt ggente
+noun
+gloss people, guys, folks
+fs gente
+fp gente
+
+
+@già
+adverb
+gloss already, yet
+gloss former, ex-
+exclamation
+note adds emphasis, hard to translate
+
+
+@gliandra
+xref cugliandra
+noun
+gloss acorn
+fs cugliandra
+fp cugliandre
+
+
+@guaglione
+noun
+gloss boy, girl
+gloss guy, gal, person
+cite Comme state guagliune? = How are you, guys?
+ms guaglione
+fs guagliona
+mp guagliune
+fp guaglione

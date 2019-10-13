@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Index Generator For Texts</title>
+    </head>
+    <body>
+
+        <input id="files" type="file" multiple>
+
+        <textarea id="result" cols="80" rows="20"></textarea>
+
+        <dir id="status"></dir>
+
+        <script>
+        
+        var index = [];
+
+        document.querySelector("#files").addEventListener("change", async () => {
+            
+            var tokens = ["title","author","music","year","audio","section","order"];
+
+            for (var i=0; i<this.files.files.length; i++){
+
+                var fname = this.files.files[i].name;
+
+                if (fname == "index.json") continue;
+
+                document.querySelector("#status").innerHTML += " "+fname;
+
+                //Grab the appropriate text file
+                let result = await fetch('texts/'+fname);
+
+                let meta = {"file":fname};
+
+                //Turn the data into text
+                let data = await result.text();
+                    data = data.split("\n");
+
+                    data.forEach((line)=> {
+                        
+                        var token = line.substr(0,line.indexOf(' '));
+                        var rest = line.substr(line.indexOf(' ')+1);
+
+                        if (tokens.indexOf(token) > -1) {
+                            
+                            meta[token] = rest;
+                            
+                            //FIX AUDIO LATER
+                            
+                        }
+
+                    });
+
+                    index.push(meta);
+
+            }
+
+            document.querySelector("#result").innerHTML = JSON.stringify(index);
+
+            document.querySelector("#status").innerHTML = "DONE";
+
+        });
+        
+        </script>
+
+    </body>
+</html>

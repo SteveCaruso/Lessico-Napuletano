@@ -1,0 +1,17 @@
+@juorno
+noun
+gloss day
+ms juorno
+mp juorne
+
+
+@justo
+adverb
+gloss just, exactly, only
+
+adjective
+gloss just, right, fair
+note doubled: justo justo = precisely
+ms justo
+fs justa
+p juste

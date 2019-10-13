@@ -1,0 +1,80 @@
+@santo
+adjective
+gloss saint
+ms santo, san
+fs santa, san
+p sante
+bv sant'
+
+
+@se
+pronoun
+gloss reflexive 3rd person singular and plural: one, oneself, itself, himself, herself, themselves, etc.
+c se
+bv s'
+
+
+@sempe
+adverb
+gloss always
+gloss still
+
+
+@senza
+conjunction
+gloss without
+preposition
+gloss without, -less
+cite senza valore = worthless
+
+
+@si
+conjunction
+gloss if
+gloss whether
+gloss if only
+gloss si nun: if not, but, except
+
+
+@sì
+adverb
+gloss yes
+
+
+@sotto
+preposition
+gloss under, beneath, underneath
+gloss below, south of
+combo vowel sott'
+combo 'o sott''o
+combo 'a sott''a
+combo 'e sott''e
+combo ll' sotto ll'
+combo da sott'a
+
+adverb
+gloss down
+gloss underrneath
+gloss below
+
+noun
+gloss bottom
+ms sotto
+
+
+@stesso
+adjective
+gloss same, equal
+gloss -self, (myself, yourself, himself, herself, itself, themself, etc.)
+ms stesso
+ms stessu
+note This form is used if it comes before a word that it modifies.
+fs stessa
+p stesse
+p stessi
+note This is older and not used much in modern writing.
+bv stess'
+note Sometimes used before vowels or definite articles.
+
+adverb
+gloss all the same, just the same, anyways

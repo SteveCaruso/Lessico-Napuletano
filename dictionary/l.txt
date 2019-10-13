@@ -1,0 +1,27 @@
+@libertà
+noun
+gloss liberty, freedom
+fs libertà
+fp libertà
+
+
+@ll'
+xref 'o 
+        
+@llà
+adverb
+gloss there
+
+
+@lucia
+name
+gloss The given name Lucia, in English "Lucy"
+gloss Borgo Santa Lucia, a district in the Gulf of Naples on the coast known for sailors and patriotic Neapolitans.
+gloss St. Lucia of Syracuse
+
+fs Lucia
+
+adjective
+gloss bright
+
+fs lucia

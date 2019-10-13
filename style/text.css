@@ -1,0 +1,26 @@
+body {
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:120%;
+    padding-bottom:300px;
+}
+a {
+    color:black;
+    text-decoration:none;
+}
+a:hover {
+    color:white;
+    background-color:gray;
+    border:0px solid gray;
+    border-radius:3px;
+}
+#toc {
+    position:absolute;
+    right:10px;
+    top:10px;
+    border-radius:5px;
+    border:1px solid gray;
+    padding-left:2em;
+    padding-right:2em;
+    font-weight:bold;
+    padding-bottom:2em;
+}

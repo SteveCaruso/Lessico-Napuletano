@@ -1,0 +1,8 @@
+@uno
+numeral
+gloss one
+ms uno
+msbv un
+msbc unu
+fs una
+p une

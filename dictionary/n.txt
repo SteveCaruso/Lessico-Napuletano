@@ -1,0 +1,84 @@
+@'na
+xref nu
+
+
+@'nu
+xref nu
+
+
+@nce
+adverb
+gloss here
+gloss there
+gloss to there
+
+pronoun
+gloss atonic 3rd person singular: him/her, to him/to her
+gloss atonic 1st person plural: us, to us
+c nce
+
+
+@ncoppa
+alt 'ncoppa
+
+preposition
+gloss on, on top of
+gloss above
+combo 'o ncopp''o, ncopp'ô
+combo 'a ncopp''a, ncopp'â
+combo 'e ncopp''e, ncopp'ê
+combo ll' ncoppa ll', ncoppo ll'
+combo da ncopp'a
+
+adverb
+gloss up
+gloss on top
+gloss above
+
+noun
+gloss top
+fs ncoppa
+
+
+@ne
+pronoun
+gloss genitive neuter 3rd person: about it, of it, of them
+c ne
+bv n'
+
+
+@niente
+article
+gloss nothing
+gloss anything
+c niente
+
+adverb
+gloss at all
+gloss nothing
+
+noun
+gloss nothing
+c niente
+
+
+@nu
+article
+gloss indefinite: a/an
+ms nu, 'nu, unu
+fs na, 'na, una
+bv n'
+
+
+@nuje
+pronoun
+gloss personal 1st person plural: we
+gloss tonic 1st person plural: us, to us
+gloss prepositional 1st person plural: us
+c nuje, nuie, nui
+
+@nun
+adverb
+gloss not
+gloss un-
+gloss don't

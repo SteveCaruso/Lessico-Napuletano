@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+    <head>
+        <title>View Text</title>
+        <link rel="stylesheet" type="text/css" href="style/text.css">
+    </head>
+    <body>
+        
+        <div id="result"></div>
+        
+<script>
+    
+    var data;
+    
+    function parseData(data) {
+        
+        var tokens = ["title","author","music","year","audio","section","order"];
+        
+        var meta = {}; var metadata_finished = false;
+        
+        var toc = [];
+        
+        var result = "";
+        
+        for (var i in data) {
+            
+            var line = data[i];
+            var token = line.substr(0,line.indexOf(' '));
+            var rest = line.substr(line.indexOf(' ')+1);
+            
+            if (tokens.indexOf(token) > -1) {
+                
+                meta[token] = rest;
+                
+                //Audio display
+                if (token == "audio") {
+                    
+                    let mp3 = rest.substr(0,rest.indexOf(' '));
+                    let singer = rest.substr(rest.indexOf(' ')+1).trim();
+                    
+                    result += `<audio controls>
+                        <source src="../audio/${mp3}" type="audio/mpeg">
+                        Upgrade your browser to listen to the music.
+                    </audio>`;
+                    
+                    if (singer.length > 0) result += `<h3>performed by ${singer}</h3>`;
+                    
+                }
+                
+            }
+            else {
+                
+                //Headings
+                if (line.charAt(0) == "#") {
+                    
+                    //Add to index
+                    toc.push(line);
+                    
+                    metadata_finished = false; //reset
+                    
+                    var count = 2;
+                    
+                    for (var x=1; x<line.length; x++) {
+                        if (line.charAt(x) !== "#") break;
+                        count++;
+                    }
+                    
+                    result += `<h${count} id="${line.replace(/\#/gi, "")}">${line.substring(count-1)}</h${count}>`;
+                    
+                }
+                //Text
+                else {
+                    
+                    var l = line;
+                        
+                    //Tokenize italics
+                    l = l.replace(/\/([^\/]+)\//gi,(a,b) => {
+                        return '[['+b+']]'; 
+                    });
+                    
+                    l = l.replace(/[a-z'êèéïâàáäôòóöîìíïûùúü]+/gi,(a) => {
+
+                            return `<a target="lookup" href="lookup.html#${a.toLowerCase()}">${a}</a>`;
+
+                    });
+
+                    l = l.replace(/\+/gi,"");
+                    
+                    l = l.replace(/^\s+/gi,(a) => {
+                        
+                        return "&nbsp;".repeat(a.length);
+                        
+                    });
+                
+                    //Fix italics
+                    l = l.replace(/\[\[/gi,'<em>');
+                    l = l.replace(/\]\]/gi,'</em>');
+                    
+                    result += `<div>${l}</div>`;
+                    
+                }
+                
+            }
+            
+        }
+        
+        let filename = window.location.search;
+            filename = decodeURIComponent(filename.substring(1));
+
+        var intro = `<a href="index.html">« Back to Index</a>`;
+
+        intro += ` | <a href="concordance.html?${filename}">View Concordance</a>`;
+        
+        intro += `<h1>${meta["title"]}${meta["year"]?' ('+meta["year"]+')':''}</h1>`;
+
+        if (meta["author"]) intro += `<h2>by ${meta["author"]}</h2>`;
+        
+        if (meta["music"]) intro += `<h2>music by ${meta["music"]}</h2>`;
+        
+        if (meta["section"]) intro += `<h2>${meta["section"]}</h2>`;
+
+        var idx = '';
+
+        //Build index
+        if (toc.length > 0) idx = `<div id="toc"><h2>Table of Contents:</h2>${toc.map( item => {
+            return `<div><a href="#`+item.replace(/\#/gi, "")+`">`+ item.replace(/^#+/gi, (a)=> {
+                return `&nbsp;&nbsp;&nbsp;&nbsp;`.repeat(a.length-1);
+            })+`</a></div>`;
+        }).join('\n')}</div>`;
+        
+        return intro + result + idx;
+        
+    }
+    
+    //Look up a text, or if not, display the index.
+    async function lookup() {
+        
+        let filename = window.location.search;
+
+        //If there is no search, display the index
+        if (filename == "") {
+            window.location.pathname = "index.html";
+            return;
+        }
+
+        //Snag the search
+        let file = decodeURIComponent(filename.substring(1));
+
+        //Grab the appropriate text file
+        let result = await fetch('texts/'+file+'.txt');
+
+        //Turn the data into text
+        data = await result.text();
+        data = data.split("\n");
+        
+        //Parse it
+        var display = parseData(data);
+        
+        //Display it
+        document.querySelector("#result").innerHTML = display;
+        
+    }
+
+    /*
+    async function displayIndex() {
+
+        //Grab the appropriate text file
+        let ind = await fetch('texts/index.json');
+
+        //Turn the data into an object
+        data = await ind.json();
+
+        //Basic sort
+        data = data.sort((a,b) => {
+            if (a.year == b.year) {
+                if (a.title == b.title) {
+                    return parseInt(a.order) - parseInt(b.order);
+                }
+                else if (a.title > b.title) return 1;
+                else if (a.title < b.title) return -1;
+                else return 0;
+            }
+            else {
+                return parseInt(a.year) - parseInt(b.year);
+            }
+        });
+
+        //Set up the index display
+        var result = `<h1>Index of Texts:</h1>`;
+
+        result += `<table border="1">
+            <tr>
+                <th>Title:</th>
+                <th>Year:</th>
+                <th>&nbsp;</th>
+                <th>Author:</th>
+            </tr>`;
+
+            //Some metrics
+            var authorCount = {};
+
+            //Display each text
+            for (var i in data) {
+
+                var fnam = data[i]["file"].split(".")[0];
+
+                result += `<tr>
+                    <td><a href="text.html?${fnam}">${data[i]["title"]} ${data[i]["section"]?'-('+data[i]["order"]+') '+data[i]["section"]:''}</a></td>
+                    <td>${data[i]["year"]}</td>
+                    <td>${data[i]["audio"]?"🔈":""}</td>
+                    <td>${data[i]["author"]}</td>
+                </tr>`;
+
+                if (authorCount[data[i]["author"]])
+                    authorCount[data[i]["author"]]++;
+                else
+                    authorCount[data[i]["author"]] = 1;
+
+            }
+
+        result += `</table>`;
+
+        //Display the metrics
+        result += `<p>${data.length} entries and ${Object.keys(authorCount).length} authors.</p>`;
+
+        //Post the results
+        document.querySelector("#result").innerHTML = result;
+
+    }
+    */
+
+    //Set the event listener
+    window.addEventListener("load",lookup);
+
+</script>
+        
+    </body>
+</html>

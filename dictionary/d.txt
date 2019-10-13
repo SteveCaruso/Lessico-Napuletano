@@ -1,0 +1,54 @@
+@da
+alt 'a
+
+preposition
+
+gloss from
+gloss at
+gloss since
+
+note Very commonly shortened to <a href="#'a">'a</a>, especially in modern speech.
+
+
+@dio
+xref patatèrno
+noun
+gloss God
+gloss a god
+
+ms dio
+fs dea
+ns ddio
+
+
+@de
+preposition
+gloss genitive: of
+notes In front of consonants it becomes 'e, in front of vowels it becomes d', and when between vowels, it sometimes transforms into <a href="#r'">r</a>.
+combo vowel d',r'
+combo consonant 'e
+combo 'o d''o, r''o
+combo 'a d''a, r''a
+combo 'e d''e, r''e
+combo ll' 'e ll'
+
+
+@ddoce
+noun
+gloss sweetness
+ns doce,ddoce
+np doce
+adjective
+gloss sweet
+c doce
+
+
+@doppo
+adverb
+gloss after, later
+
+preposition
+gloss after
+
+conjunction
+gloss then

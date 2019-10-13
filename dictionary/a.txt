@@ -1,0 +1,152 @@
+@a      
+preposition
+note Doubles the next consonant.
+gloss to
+gloss on, upon (as point of reference or motion)</li>
+cite <a href="texts/'o-luciano-d''o-rre.html">'O luciano d''o Rre</a> v8: tuorno all'ustricare = turns upon the oyster seller
+combo 'o ô
+combo 'a â
+combo 'e ê
+combo ll' all', a ll'
+
+
+@accorgé
+verb
+aux avé
+note: Italian cognate: accorgersi
+gloss to notice, realize
+present
+2p accurgite
+cite <a href="../texts/'a-tazza-'e-caf%C3%A8.html">'A tazza 'e cafè</a> v1: I' mo nun saccio si ve n'accurgite! = I now don't know if you notice that!
+
+
+@accussì
+
+adverb
+gloss therefore, hence, thus
+
+conjunction
+gloss so
+gloss like this, like that
+
+
+@addò
+alt add',arrò
+adverb
+gloss where
+gloss where?
+
+
+@ah
+exclamation
+gloss ah!
+        
+        
+@anno
+noun
+gloss year
+ms anno
+mp anne
+
+
+@anne
+xref anno
+name
+gloss The given name Anne.
+fs Anne
+
+
+@appriesso
+adverb
+gloss after
+preposition
+gloss after
+
+
+@ato
+adjective
+gloss other, another, more, further, else
+ms ato
+fs ata
+p ate
+
+pronoun
+gloss other, other person, another, more, somebody else
+ms ato
+fs ata
+p ate
+
+
+@avé
+verb
+gloss to have (auxiliary verb only)
+notes See <a href="tené">tené</a> for posession.
+
+aux avé
+
+present
+1s aggio,àggio
+
+1s aggi'
+note Used in the obligative.
+cite Che t'aggi'a dì? = What must I say to you?
+
+1s eggi'
+note Also used in the obligative when preceeded by <a href="#nce">nce</a>, <a href="#ce">ce</a> or similar pronouns.
+cite <a href="texts/luna-mezz''o-mare.html">Luna Mezz''o Mare</a>: No calamare c'eggi'accattà = I won't have to buy us any squid.
+
+1s ho
+note Used very rarely.
+
+2s hê, aje
+3s ha, ave
+1p avimmo
+2p avite
+3p hanno, àveno
+
+imperfect
+1s avévo, aveva
+2s avìve, avive
+3s aveva
+1p avevamo
+2p avìveve, aviveve, avevate
+3p avévano, avevano
+
+remote
+1s avétte, avette, appe
+2s avìste, aviste
+3s avétte, avette, appe
+1p avéttemo, avettemo
+2p avìsteve, avisteve
+3p avétteno, avetteno
+
+future
+1s avarràggio, avarraggio
+2s avarràje, avarraje
+3s avarrà
+1p avarràmmo, avarrìmmo, avarrimmo
+2p avarrìte, avarrite, avarrate
+3p avarràno, avarranno
+
+conditional
+1s avarrìa,avarria
+2s avarrìsse,avarrisse
+3s avarrìa,avarria
+1p avarrìammo,avarriemmo
+2p avarrìsseve,avarrissevo,avarrite
+3p avarrìano,avarriano
+
+subjunctive
+1s avasse, avesse
+2s avìsse, avisse
+3s avésse, avesse
+1p avéssemo,avèssemo,avessemo
+2p avìsseve,avissevo
+3p avésseno,avèsseno,avesseno
+
+past-participle
+m avuto
+f avuta
+p avute
+
+gerund avenno

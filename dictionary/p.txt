@@ -1,0 +1,43 @@
+@parlà
+verb
+aux avé
+gloss to speak, to say
+
+
+@pe
+preposition
+gloss for
+gloss to (direction)
+gloss through
+gloss by, by means of
+notes Doubles the next consonant.
+combo vowel p'
+combo 'o p''o
+combo 'a p''a
+combo 'e p''e
+combo ll' pe ll'
+
+
+@pecchè
+alt pecché
+conjunction
+gloss because, why
+gloss so that...
+adverb
+gloss why?
+
+
+@pò
+alt po', po
+adverb
+gloss temporal: then, later
+
+
+@pure
+adverb
+gloss too, also, as well
+gloss well, surely
+conjunction
+gloss though, although, even though
+gloss yet
+gloss nevertheless

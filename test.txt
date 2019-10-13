@@ -1,0 +1,247 @@
+@'o
+article
+gloss definite: the
+notes Combines with a number of prepositions, such as <a href="#de">de</a>, <a href="#pe">pe</a>, <a href="#cu">cu</a>, <a href="#da">da</a>, and others.
+ms 'o
+fs 'a
+ns 'o
+p 'e
+bv ll'
+
+@'a
+xref 'o
+
+@'e
+xref de
+xref 'o
+
+@ll'
+xref 'o
+
+@nu
+article
+gloss indefinite: a/an
+ms nu, 'nu, unu
+fs na, 'na, una
+bv n'
+
+@'nu
+xref nu
+
+@'na
+xref nu
+
+@unu
+xref nu
+
+@una
+xref nu
+
+
+@de
+preposition
+gloss genitive: of
+notes In front of consonants, "de" becomes 'e. In front of vowels, it becomes d'. Very rarely does one see it as "de."
+combo vowel d'
+combo consonant 'e
+combo 'o d''o
+combo 'a d''a
+combo 'e d''e
+combo ll' 'e ll'
+
+@ncoppa
+
+preposition
+gloss on, on top of
+gloss above
+combo 'o ncopp''o, ncopp'ô
+combo 'a ncopp''a, ncopp'â
+combo 'e ncopp''e, ncopp'ê
+combo ll' ncoppa ll', ncoppo ll'
+combo da ncopp'a
+
+adverb
+gloss up
+gloss on top
+gloss above
+
+noun
+gloss top
+fs ncoppa
+
+
+@bello
+adjective
+gloss beautiful
+ms bello
+msbv bellu
+fs bella
+p belle
+
+
+@guaglione
+noun
+gloss boy, girl
+gloss guy, gal, person
+cite Comme state guagliune? = How are you, guys?
+ms guaglione
+fs guagliona
+mp guagliune
+fp guaglione
+
+
+@re
+noun
+gloss king, ruler
+cite <a href="../texts/'o-luciano-d''o-rre.html">'O luciano d''o Rre</a> = The King's Luciano (title)
+ns re
+ns rre
+note doubled when preceeded by the definite article
+np re
+
+
+
+@parlà
+verb
+aux avé
+gloss to speak, to say
+
+@èssere
+verb
+gloss to be
+
+aux èssere
+
+present
+1s sogno
+1s so'
+note causes doubling of the next consonant
+2s sî
+3s è
+1p simmo
+2p site
+3p sogno
+3p so'
+note causes doubling of the next consonant
+
+imperfect
+1s ero, evo
+2s ire, ive
+3s era, ira
+1p èramo
+2p ìreve
+3p èrano
+
+remote
+1s fuje, fui
+2s fuste
+3s fuje, fove
+1p fusteve
+2p ìreve
+3p fujeno
+
+future
+1s sarràggio
+2s sarràje
+3s sarrà
+1p sarràmmo, sarrìmmo
+2p sarràte
+3p sarràno
+
+conditional
+1s sarrìa
+2s sarrìsse
+3s sarrìa
+1p sarrìammo
+2p sarrìsseve
+3p sarrìano
+
+subjunctive
+1s fosse
+2s fusse, fosse
+3s fosse
+1p fossemo
+2p fusseve
+3p fosseno
+
+past-participle
+m stato
+f stata
+p state
+
+gerund sènno
+
+
+@avé
+verb
+gloss to have (auxiliary verb only)
+notes See <a href="tené">tené</a> for posession.
+
+aux avé
+
+present
+1s aggio
+
+1s aggi'
+note Used in the obligative.
+cite Che t'aggi'a dì? = What must I say to you?
+
+1s eggi'
+note Also used in the obligative when preceeded by <a href="#nce">nce</a>, <a href="#ce">ce</a> or similar pronouns.
+cite <a href="texts/luna-mezz''o-mare.html">Luna Mezz''o Mare</a>: No calamare c'eggi'accattà = I won't have to buy us any squid.
+
+1s ho
+note Used very rarely.
+
+2s hê, aje
+3s ha, ave
+1p avimmo
+2p avite
+3p hanno, àveno
+
+imperfect
+1s avévo
+2s avìve
+3s aveva
+1p avevamo
+2p avìveve
+3p avévano
+
+remote
+1s avétte
+2s avìste
+3s avétte
+1p avéttemo
+2p avìsteve
+3p avétteno
+
+future
+1s avarràggio
+2s avarràje
+3s avarrà
+1p avarràmmo, avarrìmmo
+2p avarrìte
+3p avarràno
+
+conditional
+1s avarrìa
+2s avarrìsse
+3s avarrìa
+1p avarrìammo
+2p avarrìsseve
+3p avarrìano
+
+subjunctive
+1s avasse
+2s avìsse
+3s avésse
+1p avéssemo
+2p avìsseve
+3p avésseno
+
+past-participle
+m avuto
+f avuta
+p avute
+
+gerund avenno

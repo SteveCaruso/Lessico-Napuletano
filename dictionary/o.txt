@@ -1,0 +1,62 @@
+@'o
+article
+gloss definite: the
+notes Combines with a number of prepositions, such as <a href="#a">a</a>, <a href="#de">de</a>, <a href="#'n">'n</a>, <a href="#pe">pe</a>, <a href="#cu">cu</a>, <a href="#da">da</a>, and others.
+ms 'o
+ms 'u
+note rarer
+ms lo
+note old form
+ms lu
+note old form
+fs 'a
+fs la
+note old form
+ns 'o
+mp li
+note old form
+fp le
+note old form
+p 'e
+bv ll', l'
+
+
+@o
+conjunction
+gloss or
+
+
+@ogne
+adjective
+gloss every
+gloss each
+c ogne
+
+
+@uocchio
+noun
+gloss eye
+gloss figurative: sight
+ms uocchio
+mp uocchie
+
+
+@oro
+noun
+gloss gold
+ms oro
+mp ore
+
+adjective
+gloss golden
+c oro
+
+
+@overo
+noun
+gloss truth
+ms overo
+mp overe
+
+exclamation
+gloss true!, it's the truth!

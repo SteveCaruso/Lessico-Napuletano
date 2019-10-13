@@ -1,0 +1,151 @@
+@c'
+xref ca
+xref ce
+xref cu
+
+
+@ca
+adverb
+gloss what
+
+conjunction
+gloss With comparison between adjectives.
+cite 'O guaglione <strong>ca</strong> visto. = The boy that I see
+
+pronoun
+gloss that
+gloss who
+gloss which
+c ca
+bv c'
+
+
+@ccà
+alt cà
+adverb
+gloss here
+
+
+@cchiù
+alt chiù
+
+adverb
+gloss more
+gloss anymore
+gloss still
+
+
+@certo
+adjective
+gloss certain
+gloss sure
+gloss reliable
+gloss real, true
+ms certo
+fs certa
+p certe
+
+adverb
+gloss certainly, of course, sure, definitely
+
+
+@che
+pronoun
+gloss interrogative: what?
+gloss relative: who, whom, which
+c che
+bv ch'
+        
+exclamation
+gloss what!
+cite Che festa! = What a party!
+
+
+@ch'
+xref che
+xref chi
+
+
+@chi
+pronoun
+gloss relative: who, whom, which
+
+
+@chillo
+pronoun
+gloss demonstrative: that, those
+ms chillo, chello
+fs chella
+ns chillo, chello
+mp chille, chelli
+fp chelle
+np chille, chelli
+bv chill', chell'
+
+
+@chistu
+pronoun
+gloss demonstrative: this
+note The shortened forms are increasingly more popular in speech and literature.
+
+ms chistu, 'stu, stu
+fs chesta, 'sta, sta
+mp chisti
+fp chesti
+p 'sti, sti
+bv chist', chest', st'
+
+
+@cu
+preposition
+gloss with
+gloss together
+note Doubles the next consonant.
+
+combo vowel c'
+combo 'o c''o
+combo 'a c''a
+combo 'e ch''e
+combo ll' cu ll'
+
+
+@cugliandra
+xref gliandra
+noun
+gloss acorn
+fs cugliandra
+fp cugliandre
+
+
+@comme
+adverb
+gloss how
+cite Comme staje? = How are you?
+cite Comme state? = How are you? (formal)
+gloss as/like
+cite Comm''o gato. = Like the cat.
+gloss such as
+
+combo 'o comm''o
+combo 'a comm''a
+combo 'e comm''e
+combo ll' comme ll'
+combo da comm'a
+
+conjunction
+gloss as soon as
+
+
+@cosa
+noun
+gloss thing, matter
+
+fs cosa
+fp cose
+
+pronoun
+gloss what?
+gloss what!
+cite Che cosa? = What is it?
+
+c cosa

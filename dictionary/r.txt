@@ -1,0 +1,29 @@
+@ramaglia
+name
+gloss The surname Ramaglia.
+gloss In <a href="texts/'o-luciano-d''o-rre.html">'O luciano d''o Rre</a>: The clinician Cav. Don Pietro Ramaglia (1802-1875). A very well respected court doctor who tended to Ferdinand II and the Royal Family.
+c Ramaglia
+
+noun
+gloss branches and clippings cut from a tree during pruning
+gloss brushwood
+gloss undergrowth
+fs ramaglia
+fp ramaglie
+
+
+@re
+noun
+gloss king, ruler
+cite <a href="../texts/'o-luciano-d''o-rre.html">'O luciano d''o Rre</a> = The King's Luciano (title)
+ns re
+ns rre
+note doubled when preceeded by the definite article
+np re
+
+
+@riggina
+alt riggìna
+noun
+gloss queen
+fs riggina

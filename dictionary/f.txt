@@ -1,0 +1,62 @@
+@fà
+verb
+gloss to do, to make
+gloss to make like (especially with <a href="#vulé">vulé</a>)
+aux avé
+
+present
+1s faccio
+2s faje, fai
+3s fa
+1p facimmo
+2p facite
+3p fanno, facéno
+
+imperfect
+1s facevo
+2s facive
+3s faceva
+1p facvamo
+2p faciveve
+3p facevano
+
+remote
+1s facétte
+2s faciste
+3s facétte
+1p facéttemo
+2p facisteve
+3p facéttero
+
+future
+1s faciarràggio
+2s faciarràje
+3s faciarrà
+1p faciarràmmo
+2p faciarràte
+3p faciarràno
+
+conditional
+1s farría, faciarrìa
+2s farrísse, faciarrìsse
+3s farría, faciarrìa
+1p farríamo, faciarrìamo
+2p farrísseve, faciarrìsseve
+3p farríano, faciarrìano
+
+subjunctive
+1s fasse, facesse
+2s fasse, facisse
+3s fasse, facesse
+1p fassemo, facessemo
+2p fasseve, facisseve
+3p fasseno, facesseno
+
+past-participle
+m fatto
+f fatta
+p fatte
+
+gerund facenno
+
+

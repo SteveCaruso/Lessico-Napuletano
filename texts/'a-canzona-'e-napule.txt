@@ -1,0 +1,50 @@
+title 'A canzona 'e Napule
+music Ernesto De Curtis
+author Libero Bovio
+year 1912
+audio 'a-canzona-'e-napule.mp3 Giuseppe De Stefano
+
+#Verse 1
+
+Mme ne vogl'+i' a ll'+America,
+Ca sta luntana assaje.
+Mme ne vogl'+i' addò maje
+Te pozzo 'ncuntrà cchiù.
+
+#Refrain
+
+Mme voglio scurdà 'o cielo,
+Tutt' 'e ccanzone e 'o mare.
+Mme voglio scurdà 'e Napule,
+Mme voglio scurdà 'e mammema,
+Mme voglio scurdà 'e te.
+
+#Verse 2
+
+Nun voglio cchiù nutizie
+D'+amice e d' 'e pariente.
+Nun voglio sapè niente
+'E chello ca se fa!
+
+#Refrain
+
+Mme voglio scurdà 'o cielo,
+Tutt' 'e ccanzone e 'o mare.
+Mme voglio scurdà 'e Napule,
+Mme voglio scurdà 'e mammema,
+Mme voglio scurdà 'e te.
+
+#Verse 3
+
+Ma quanto è bella Napule!
+Stanotte è bella assaje!
+Nun ll'+aggio vista maje
+Cchiù bella 'e comm'+a mò!
+
+#Reprise
+
+Comme mme scordo 'o cielo,
+Tutt' 'e ccanzone e 'o mare?
+Comme mme scordo 'e Napule?
+Comme mme scordo 'e mammema?
+Comme mme scordo 'e te?
