@@ -24,6 +24,7 @@ alt 'ncoppa
 preposition
 gloss on, on top of
 gloss above
+combo vowel ncopp','ncopp'
 combo 'o ncopp''o, ncopp'ô
 combo 'a ncopp''a, ncopp'â
 combo 'e ncopp''e, ncopp'ê
@@ -47,6 +48,13 @@ c ne
 bv n'
 
 
+@neva
+noun
+gloss snow
+note Italian: neve
+fs neva
+
+
 @niente
 article
 gloss nothing
@@ -60,6 +68,11 @@ gloss nothing
 noun
 gloss nothing
 c niente
+
+
+@no
+adverb
+gloss no, not, non-
 
 
 @nu

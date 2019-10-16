@@ -49,6 +49,15 @@ remote
 cite <a href="texts/'o-luciano-d''o-rre.html">'O luciano d''o Rre</a> 19: mettette 'a rinto, chillo 'mpiso? = What did he put in it, that villian?
 
 
+@mio
+pronoun
+gloss possessive 1st person singular: my
+ms mio,mìo
+fs mia,mìa
+mp mieje
+fp meje
+
+
 @mmiezo
 alt miezo
 preposition

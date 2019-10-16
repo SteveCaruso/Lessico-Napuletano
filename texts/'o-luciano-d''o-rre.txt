@@ -4,7 +4,7 @@ year 1908
 
 #I
 
-audio 'o-luciano-d''o-rrè--nino-taranto.mp3 Nino Taranto
+audio 'o-luciano-d''o-rre--nino-taranto.mp3 Nino Taranto
 
 ##1.ª
 
@@ -56,7 +56,7 @@ Tutt'+'e ccanzone t'+'e ppurtava 'o mare,
 p'+'a festa r'+'a Maronna r'+'a Catena,
 cu 'a bbona pesca, 'e cuoppe r'+'e renare,
 e 'a cantina 'e Cient'+anne sempe chiena!
-Mò… che ne cacce? Cca s'è fravecato!
+Mò… che ne cacce? Cca s'+è fravecato!
 Tutto è prucresso, pe puté arrunzà!
 Si' marenaro? E, quanno 'e faticato,
 fai ll'+uocchie chine… e 'a rezza nun t'+'o ddà!
@@ -72,7 +72,7 @@ e 'o mare tutto cummigliato 'e vele!
 Veneva 'a voce, da li pparanzelle:
 "Aonna, 'o mare! Aonna!…„ E li ccannele
 s'+appicciavano nnanza a li Ssant'+Anne,
-p'+'a pruvverenzia "ch'è venuta aguanne!„
+p'+'a pruvverenzia "ch'+è venuta aguanne!„
 
 ##7.ª
 
@@ -190,7 +190,7 @@ rummane cu na vranca 'e mosche mmane!…
 
 'A libbertà! Mannaggia chi v'è nato!
 'A chiammàsteve tanto, ca venette!
-Ne songo morte gente! S'è ghiettato
+Ne songo morte gente! s'+è ghiettato
 a llave, 'o sango, sott'+'e bbaiunette!…
 Mo', vulesse veré risuscitato
 a 'o Rre ca n'+'a vuleva e n'+'a vulette!
@@ -215,7 +215,7 @@ ca, comm'+a mo', nce ha 'rruvinato a nuie!
 Che nce mettette 'a rinto, chillo 'm+piso
 ca, pe farlo murì, l'+avvelenaie?
 Meglio era s'+isso nce mureva acciso!
-Isso, ch'è stato 'a causa 'e tutt'+'e guaie!
+Isso, ch'+è stato 'a causa 'e tutt'+'e guaie!
 'O Rre nuosto 'o ssapette, 'n+paraviso,
 e certo, 'o ggiurarrìa, nce 'o pperdunaie!
 Ma si nun era 'o ttuòsseco 'e sta tazza,
@@ -246,7 +246,7 @@ pure 'o Santo Tesoro 'e San Gennaro!
 ##22.ª
 
 So' biecchio? So' gnurante? Nun capisco?
-Me sustenite ch'è tutt'+'o ccuntrario?
+Me sustenite ch'+è tutt'+'o ccuntrario?
 Embè… voglio sapè che fosse 'o Fisco!
 Nun fui n'+aggrisso 'o cchiù straurdinario?
 Io tengo 'a rrobba, tu m'+'o mmiette 'n+frisco,
@@ -274,7 +274,7 @@ Nui simmo addeventate tanta crape!
 Ah, so' gnurante?… Nce 'o scuntammo appriesso!
 Po' verimmo sta porta chi l'+arape!
 'E palazze?… So' belle!… 'E strate?… Pure!
-Ma s'è perza 'a semmenta d'+'e signure!
+Ma s'+è perza 'a semmenta d'+'e signure!
 
 ##25.ª
 
@@ -305,7 +305,7 @@ Era sicuro 'e jì, venì, restá…
 Stevano llà! Na squatra pronta a tutto!
 Ogne parola, ogne guardata, ogn'+atto!
 Viaggio tristo assai! Viaggio brutto!
-Cchiù de na vota s'è purtato 'n+quatto!
+Cchiù de na vota s'+è purtato 'n+quatto!
 Isso, ca ne vulea tirà 'o ccustrutto,
 n'+arrivava a sapé che s'+era fatto
 pe chella malatia misteriosa,
@@ -417,7 +417,7 @@ Putive suspettà 'e nu saciardote?
 Va buono, se mpattai!… Ma ve rich'+io
 ca l'+avarrìano acciso ciento vote!
 Chisto, verite, è razziucinio mio!
-Nce n'+addunàimo! Ch'èramo, carote?
+Nce n'+addunàimo! Ch'+èramo, carote?
 E po'… si parle ca nun si' birbante,
 che vene a di' ca doppo te n'+avante?!
 
@@ -526,7 +526,7 @@ Ramaglia 'o vesetai. – "State malato!
 
 ##47.ª
 
--Pecchè? dicette 'o Rre; ch'è funnarale?
+-Pecchè? dicette 'o Rre; ch'+è funnarale?
 -No… nient'+'e chesto! Mill'+anne 'e saluta!
 Ma che facimmo? Pe scanzà nu male,
 mettimmo ncopp'+a cuotto acqua vulluta?

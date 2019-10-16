@@ -1,3 +1,65 @@
+@jì
+alt ì,ghì,annare
+verb
+gloss to go
+aux èssere
+
+present
+1s vaco,vac'
+2s vaje,va'
+3s va
+1p jammo
+2p jate,annate
+3p vanno
+
+imperfect
+1s jevo
+2s jive
+3s jeva
+1p jevemo
+2p jiveve
+3p jeveno
+
+remote
+1s jette
+2s jiste
+3s jette
+1p jettemo
+2p jisteve
+3p jetteno
+
+future
+1s jarraggio
+2s jarraje
+3s jarrà
+1p jarrimmo
+2p jarrite
+3p jarranno
+
+conditional
+1s jarria
+2s jarrisse
+3s jarria
+1p jarrissemo
+2p jarrissevo
+3p jarriano
+
+subjunctive
+1s jesso
+2s jissi
+3s jesse
+1p jessemo
+2p jistene
+3p jesseno
+
+past-participle
+m juto,ghiuto
+f juta,ghiuta
+p jute,ghiute
+
+gerund jenno,ghienno
+
+
 @juorno
 noun
 gloss day

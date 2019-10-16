@@ -20,6 +20,19 @@ c ca
 bv c'
 
 
+@cagnà
+verb
+gloss to turn
+aux avé
+
+
+@causa
+noun
+gloss cause
+fs causa
+fp cause
+
+
 @ccà
 alt cà
 adverb
@@ -88,7 +101,8 @@ pronoun
 gloss demonstrative: this
 note The shortened forms are increasingly more popular in speech and literature.
 
-ms chistu, 'stu, stu
+msbv chistu
+ms chisto,chesto,'stu, stu
 fs chesta, 'sta, sta
 mp chisti
 fp chesti

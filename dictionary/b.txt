@@ -6,3 +6,19 @@ ms bello
 msbc bellu
 fs bella
 p belle
+
+@buono
+adjective
+gloss good, fair
+ms buono
+fs buona
+p buone
+
+
+@buordo
+noun
+gloss edge, border, margin, hem, rim
+gloss (nautical) side, board
+gloss (nautical) a buordo = on board
+ms buordo
+mp buorde

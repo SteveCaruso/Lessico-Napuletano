@@ -7,6 +7,12 @@ p sante
 bv sant'
 
 
+@sapé
+gloss to know
+aux avé
+verb
+
+
 @se
 pronoun
 gloss reflexive 3rd person singular and plural: one, oneself, itself, himself, herself, themselves, etc.
@@ -65,6 +71,8 @@ ms sotto
 @stà
 verb
 gloss to be (situated)
+
+aux èssere
 
 present
 1s sto,stonco

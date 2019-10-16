@@ -10,6 +10,28 @@ gloss since
 note Very commonly shortened to <a href="#'a">'a</a>, especially in modern speech.
 
 
+@dì
+alt dì,di'
+verb
+gloss to say
+
+present
+1s dico
+2s dici
+3s dice
+1p dicemmo
+2p dite
+3p dicono
+
+imperfect
+1s dicevo
+2s dicive
+3s diceva
+1p dicevemmo
+2p diciveve
+3p dicevene
+
+
 @dio
 xref patatèrno
 noun

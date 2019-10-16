@@ -30,6 +30,20 @@ gloss so
 gloss like this, like that
 
 
+@acqua
+noun
+gloss water
+fs acqua
+fp acque
+
+
+@addore
+noun
+gloss smell, odor
+gloss perfume
+c addore
+
+
 @addò
 alt add',arrò
 adverb
@@ -40,7 +54,13 @@ gloss where?
 @ah
 exclamation
 gloss ah!
-        
+
+
+@anfino
+adverb
+gloss even
+cite ['O luciano d''o rre]: N'hanno cacciato anfino 'e marenare! = They have chased off even the sailors!
+
         
 @anno
 noun
@@ -61,6 +81,15 @@ adverb
 gloss after
 preposition
 gloss after
+
+
+@aspettà
+verb
+gloss to wait
+aux avé
+
+present
+2s aspiette
 
 
 @ato
@@ -91,9 +120,12 @@ present
 note Used in the obligative.
 cite Che t'aggi'a dì? = What must I say to you?
 
+1s aggia
+note Used in the obligative.
+
 1s eggi'
 note Also used in the obligative when preceeded by <a href="#nce">nce</a>, <a href="#ce">ce</a> or similar pronouns.
-cite <a href="texts/luna-mezz''o-mare.html">Luna Mezz''o Mare</a>: No calamare c'eggi'accattà = I won't have to buy us any squid.
+cite Luna Mezz''o Mare: No calamare c'eggi'accattà = I won't have to buy us any squid.
 
 1s ho
 note Used very rarely.

@@ -7,12 +7,35 @@ gloss formal/polite 2nd person singular reflexive: yourself
 c ve
 bv v'
 
+
 @via
 noun
 gloss road, street, path
 gloss way, route
 fs via
 fp vie
+
+
+@viaggio
+noun
+gloss voyage, trip
+ms viaggio
+mp viaggie
+
+
+@vivo
+xref vivò
+adjective
+gloss alive
+ms vivo
+fs viva
+p vive
+
+@vivò
+xref vivo
+exclamation
+gloss live!
+
 
 @vizio
 noun

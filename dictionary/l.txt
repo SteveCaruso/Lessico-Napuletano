@@ -1,3 +1,9 @@
+@lanza
+name
+gloss In 'O luciano d''o rre: <a href="https://en.wikipedia.org/wiki/Vincenzo_Lanza" target="_blank">Vincenzo Lanza</a>, an Italian physician, politician and professor.
+c Lanza
+
+
 @libertà
 noun
 gloss liberty, freedom

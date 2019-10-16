@@ -23,7 +23,7 @@ present
 1s sogno
 1s so'
 note causes doubling of the next consonant
-2s sî,sì
+2s sî,sì,si'
 3s è
 1p simmo
 2p site

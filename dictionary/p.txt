@@ -4,6 +4,19 @@ aux avé
 gloss to speak, to say
 
 
+@parola
+noun
+gloss word
+fs parola
+fp parole
+
+
+@partì
+verb
+gloss to depart, leave
+aux avé
+
+
 @pe
 preposition
 gloss for
@@ -41,3 +54,17 @@ conjunction
 gloss though, although, even though
 gloss yet
 gloss nevertheless
+
+
+@puveriéllo
+adjective
+gloss poor, empoverished
+ms puveriéllo
+fs puveriélla
+p puveriélle
+
+noun
+gloss poor person
+ms puveriéllo
+fs puveriélla
+p puveriélle
