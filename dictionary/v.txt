@@ -8,6 +8,30 @@ c ve
 bv v'
 
 
+@vedé
+alt vedè
+verb
+gloss to see
+aux avé
+
+present
+1s vedo, vero
+2s vide, vire
+3s vede, vere
+1p vedimmo, verimmo
+2p vedite, verite
+3p védeno, véreno
+
+
+@vené
+verb
+gloss to go
+aux avé
+present
+1s vengo, venco
+2s viene
+
+
 @via
 noun
 gloss road, street, path

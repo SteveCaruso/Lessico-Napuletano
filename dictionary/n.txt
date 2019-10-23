@@ -19,6 +19,7 @@ c nce
 
 
 @ncoppa
+xref coppa
 alt 'ncoppa
 
 preposition
@@ -55,6 +56,12 @@ note Italian: neve
 fs neva
 
 
+@gnurante
+adjective
+gloss ignorant
+c gnurante
+
+
 @niente
 article
 gloss nothing
@@ -75,6 +82,12 @@ adverb
 gloss no, not, non-
 
 
+@nnanza
+adverb
+gloss forward, ahead
+gloss in front
+
+
 @nu
 article
 gloss indefinite: a/an
@@ -89,6 +102,16 @@ gloss personal 1st person plural: we
 gloss tonic 1st person plural: us, to us
 gloss prepositional 1st person plural: us
 c nuje, nuie, nui
+
+
+@nuósto
+pronoun
+gloss possessive 1st person plural: our
+ms nuósto, nuosto
+fs nòsta, nosta
+mp nuóste, nuoste
+fp nòste, noste
+
 
 @nun
 adverb

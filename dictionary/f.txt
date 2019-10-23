@@ -7,7 +7,7 @@ aux avé
 present
 1s faccio
 2s faje, fai
-3s fa
+3s fa,fa'
 1p facimmo
 2p facite
 3p fanno, facéno
@@ -15,8 +15,8 @@ present
 imperfect
 1s facevo
 2s facive
-3s faceva
-1p facvamo
+3s faceva, facea
+1p facevamo, facèvamo
 2p faciveve
 3p facevano
 
@@ -60,3 +60,67 @@ p fatte
 gerund facenno
 
 
+@faccia
+noun
+gloss face
+fs faccia
+
+
+@fidele
+adjective
+gloss faithful
+c fidele
+
+
+@fermà
+verb
+gloss to stop
+aux avé
+
+
+@festa
+noun
+gloss festival, party
+fs festa
+fp feste
+
+
+@folla
+noun
+gloss crowd
+gloss mob
+gloss multitude, host
+fs folla
+
+
+@forza
+noun
+gloss strength, force
+fs forza
+fp forze
+
+
+@freva
+noun
+gloss fever
+fs freva
+fp freve
+
+
+@friddo
+noun
+gloss cold
+gloss (disease) chills
+ms friddo
+mp fridde
+
+adjective
+gloss cold
+ms friddo
+fs fridda
+p fridde
+
+@furminanto
+name
+gloss In {'O lucciano d''o rre}: The Furminanto, or Fulminante, was a steam frigate of the Royal Two Sicilies Navy, built originally in 1848 in London by the Peninsular Steam Ship Navigation Company and called the Bombay. It was originally intended as a passenger ship but it was converted to military use and called the Ruggero VII. After a legal dispute based on the right of the provisional government to contract etc, it was deemed property of the Two Sicilies government and christened as the Fulminante in 1851. Since it retained many passenger amenities, it became frequently used to transport the Royal Family. The Fulminante saw action during the final siege of Gaeta when the Kingdom fell, and was used to transport Bourbon royalist prisoners to Genoa. Because of its fabled history and connect with the Bourbons it became a symbol of Southern Italian pride and the royalist causes. - translator's note from English version of 'O luciano d''o rre.
+ms Furminanto

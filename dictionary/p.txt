@@ -46,6 +46,12 @@ adverb
 gloss temporal: then, later
 
 
+@pressa
+noun
+gloss rush, hurry
+fs pressa
+
+
 @pure
 adverb
 gloss too, also, as well

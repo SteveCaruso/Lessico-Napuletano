@@ -87,3 +87,8 @@ gloss whole
 ms tutto
 mp tutte
 
+
+@tuttuquante
+pronoun
+gloss everbody, everyone
+c tuttuquante

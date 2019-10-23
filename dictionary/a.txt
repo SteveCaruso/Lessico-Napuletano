@@ -10,6 +10,15 @@ combo 'e ê
 combo ll' all', a ll'
 
 
+@accidere
+verb
+gloss to kill
+past-participle
+m acciso
+f accisa
+p accise
+
+
 @accorgé
 verb
 aux avé
@@ -56,6 +65,18 @@ exclamation
 gloss ah!
 
 
+@amico
+noun
+gloss friend
+p amice
+
+
+@ampressa
+adverb
+gloss quickly, soon
+c ampressa,ampresso,ampresse
+
+
 @anfino
 adverb
 gloss even
@@ -76,11 +97,50 @@ gloss The given name Anne.
 fs Anne
 
 
+@aonnà
+verb
+gloss to be abundant
+gloss to have more than necessary
+gloss (maritime, the sea) to swell
+gloss to have to owe
+aux avé
+
+
+@appena
+adverb
+gloss barely, hardly
+
+
 @appriesso
 adverb
 gloss after
 preposition
 gloss after
+
+
+@apprimma
+adverb
+gloss at first
+gloss beforehand
+
+
+@arapì
+verb
+gloss to open
+aux avé
+
+
+@arario
+noun
+gloss revenue man, tax collector(?)
+cite ['O lucciano d''o rre] 22: St'Arario fui ca t''o mmagnaste tu! = This Revenue man was there so you could gobble it up!
+ms arario
+
+
+@ariano
+noun
+gloss The town of Ariano Irpino in Campania.
+ms Ariano
 
 
 @aspettà
@@ -90,6 +150,14 @@ aux avé
 
 present
 2s aspiette
+
+
+@assaje
+alt assai
+adverb
+gloss a lot, much
+preposition
+gloss very, a lot
 
 
 @ato
@@ -106,10 +174,17 @@ fs ata
 p ate
 
 
+@aumentà
+verb
+aux avé
+gloss to increase
+gloss to grow in quantity
+
+
 @avé
 verb
 gloss to have (auxiliary verb only)
-notes See <a href="tené">tené</a> for posession.
+notes See <a href="#tené">tené</a> for posession.
 
 aux avé
 

@@ -22,6 +22,12 @@ fs cugliandra
 fp cugliandre
 
 
+@gran
+adjective
+gloss large
+c gran
+
+
 @guaglione
 noun
 gloss boy, girl
@@ -31,3 +37,16 @@ ms guaglione
 fs guagliona
 mp guagliune
 fp guaglione
+
+
+@guardà
+verb
+gloss to look
+aux avé
+
+
+@gusto
+noun
+gloss taste
+ms gusto
+mp guste

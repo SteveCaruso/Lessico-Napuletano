@@ -10,26 +10,54 @@ gloss since
 note Very commonly shortened to <a href="#'a">'a</a>, especially in modern speech.
 
 
-@dì
+@dà
+verb
+gloss to give
+aux avé
+
+present
+1s dongo
+2s daje, daie
+
+imperfect
+1s devo
+2s dive
+3s deva
+1p dévamo
+2p déveve
+3p dévano
+
+remote
+1s dette
+2s diste
+3s dette
+1p déttemo
+2p détteve
+3p détteno
+
+subjunctive
+1s desse
+2s dessi
+3s desse
+1p déssemo
+2p désseve
+3p désseno
+
+
+@dicere
 alt dì,di'
 verb
 gloss to say
+note [NOT PROPERLY PARSED HERE]
+note The infinitive is <strong>dì</strong>.
+cite Che t'aggi'a dì = What must I say to you?
 
-present
-1s dico
-2s dici
-3s dice
-1p dicemmo
-2p dite
-3p dicono
+past-participle
+m ditto
+f ditta
+p ditte
 
-imperfect
-1s dicevo
-2s dicive
-3s diceva
-1p dicevemmo
-2p diciveve
-3p dicevene
+gerund dicenno
 
 
 @dio
@@ -40,7 +68,6 @@ gloss a god
 
 ms dio
 fs dea
-ns ddio
 
 
 @de
@@ -53,6 +80,12 @@ combo 'o d''o, r''o
 combo 'a d''a, r''a
 combo 'e d''e, r''e
 combo ll' 'e ll'
+
+
+@delure
+noun
+gloss pain
+p delure
 
 
 @ddoce
@@ -68,9 +101,27 @@ c doce
 @doppo
 adverb
 gloss after, later
+combo vowel dopp'
+combo 'o dopp''o
+combo 'a dopp''a
+combo 'e dopp''e
 
 preposition
 gloss after
 
 conjunction
 gloss then
+
+
+@durà
+verb
+gloss to continue
+aux avé
+
+remote
+3s duraje, duraie
+
+@duttore
+noun
+gloss doctor
+c duttore

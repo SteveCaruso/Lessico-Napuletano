@@ -3,6 +3,13 @@ alt quann'
 adverb
 gloss when
 
+
+@quatto
+numeral
+gloss four
+c quatto
+
+
 @quanto
 adverb
 gloss how, how much, how many

@@ -107,12 +107,23 @@
         }
         
         //Find a word even by looking through fields other than the lemma
-        async function findWord(word) {
+        async function findWord(word) { console.log("finding "+word);
             
-            if (data == '') await loadData();
-            
+            var result = [];
+
+            //Check for doubling
+            if (word.charAt(0) == word.charAt(1)) {
+                result = await findWord(word.substring(1));
+            }
+            //Check for cq doubling
+            else if (word.substring(0,2) == "cq") {
+                result = await findWord(word.substring(1));
+            }
+
             let lemmas = [];
             let lemma = "";
+
+            if (data == '') await loadData();
 
             //Then start going over each line until we find the lemma we want
             for (var i=0; i<data.length; i++) {
@@ -148,7 +159,12 @@
 
                 }
             }
-            return lemmas.keys();
+
+            //Combine
+            console.log(result);
+            result = [...new Set(result.concat(...lemmas.keys()))];
+
+            return [...result];//lemmas.keys();
             
         }
         
@@ -1214,15 +1230,31 @@
             
             var word = decodeURIComponent(document.location.hash.substring(1));
 
+            var found = false;
+
             if (index[word]) {
+                found = true;
                 display.innerHTML += `<h1>${index[word].length} Result${index[word].length>1?'s':''} Found For &quot;${word}&quot;</h1>`;
                 for (var l in index[word]) {
                     let lem = retrieveLemma(index[word][l]);
                     display.innerHTML += parseLemma(lem);
                 }
             }
+
+            //Search for doubled words (including cq doubling)
+            if (word.charAt(0) == word.charAt(1) || word.substring(0,2) == "cq") {
+                let ord = word.substring(1);
+                if (index[ord]) {
+                    found = true;
+                    display.innerHTML += `<h1>${index[ord].length} Result${index[ord].length>1?'s':''} Found For &quot;${ord}&quot;</h1>`;
+                    for (var l in index[ord]) {
+                        let lem = retrieveLemma(index[ord][l]);
+                        display.innerHTML += parseLemma(lem);
+                    }
+                }
+            }
             
-            else {
+            if (!found) {
                 if (word !== "") display.innerHTML += `<h1>No Results Found For &quot;${word}&quot;</h1>`;
                 showIndex();
                 return;

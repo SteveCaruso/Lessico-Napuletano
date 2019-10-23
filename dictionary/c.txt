@@ -20,10 +20,59 @@ c ca
 bv c'
 
 
+@cadé
+verb
+aux avé
+gloss to fall
+
+
 @cagnà
 verb
 gloss to turn
 aux avé
+
+
+@callo
+xref cavallo
+noun
+gloss Copper Neapolitan coins first minted in 1472 during the reign of Ferdinando of Aragon, so called due to a horse (<a href="#cavallo">cavallo</a>) appearing on the reverse. The callo was minted during various reigns up until Ferdinando I and was replaced by the tornese, which was equal to 6 calle.
+ms callo
+mp calle
+
+
+@cammenà
+xref camminà
+verb
+aux avé
+gloss to proceed
+gloss (by extension) to walk, to tread, to travel, to wander, to stroll, to saunter
+
+
+@camminà
+xref cammenà
+verb
+aux avé
+gloss to proceed 
+gloss (by extension) to walk, to tread, to travel, to wander, to stroll, to saunter
+
+
+@cane
+noun
+gloss dog
+ms cane
+p cane
+
+
+@capiscere
+verb
+gloss to understand
+aux avé
+
+
+@caputo
+name
+gloss In ['O luciano d''o rre]: Monsignor Caputo - Bishop Michele Caputo (1808-1862) of Ariano, Born in Nardò. Members of the King’s travelling party suspected that Caputo was the one who ordered the poisoning of the King. According to several accounts, the Bishop later boasted of it, apparently in an effort to ingratiate himself with the new post-Risorgimento regime.
+ms Caputo
 
 
 @causa
@@ -46,6 +95,15 @@ adverb
 gloss more
 gloss anymore
 gloss still
+
+
+@ce
+pronoun
+gloss third person singular atonic: him, her, it
+gloss first person plural atonic: us
+gloss first person plural reflexive: ourselves
+c ce
+bv c'
 
 
 @certo
@@ -74,14 +132,47 @@ gloss what!
 cite Che festa! = What a party!
 
 
-@ch'
-xref che
-xref chi
-
-
 @chi
 pronoun
 gloss relative: who, whom, which
+c chi
+bv ch'
+
+
+@chiammà
+verb
+aux avé
+gloss to call
+gloss to cry
+note Used to introduce names. Me 
+
+
+@chiaro
+adjective
+gloss clear
+ms chiaro
+fs chiara
+p chiare
+
+
+@cielo
+noun
+gloss sky
+ms cielo
+mp ciele
+
+
+@ciucculata
+noun
+gloss chocolate
+fs ciucculata
+fp ciucculate
+
+
+@chiene
+adjective
+gloss full
+c chiene
 
 
 @chillo
@@ -94,6 +185,13 @@ mp chille, chelli
 fp chelle
 np chille, chelli
 bv chill', chell'
+
+
+@chiove
+noun
+gloss rain
+fs chiove
+fp chiove
 
 
 @chistu
@@ -150,6 +248,20 @@ conjunction
 gloss as soon as
 
 
+@coppa
+xref ncoppa
+noun
+gloss top
+c coppa
+
+
+@core
+noun
+gloss heart
+ms core
+mp core
+
+
 @cosa
 noun
 gloss thing, matter
@@ -163,3 +275,21 @@ gloss what!
 cite Che cosa? = What is it?
 
 c cosa
+
+
+@credé
+verb
+gloss to believe
+aux avé
+
+
+@curaggio
+noun
+gloss courage
+ms curraggio
+
+
+@còppola
+noun
+gloss heart
+fs còppola

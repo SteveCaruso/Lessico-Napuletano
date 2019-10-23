@@ -2,6 +2,13 @@
 conjunction
 gloss but
 
+
+@maistà
+name
+gloss Your Majesty
+c Maistà
+
+
 @maje
 alt mai
 adverb
@@ -9,12 +16,25 @@ gloss never
 gloss ever, always
 
 
+@malatia
+xref malato
+noun
+gloss sickness, illness, disease, ailment
+fs malatia
+
+
 @malato
+xref malatia
 adjective
 gloss ill, sick, unwell, affected, sore
 ms malato
 fs malata
 p malate
+
+
+@male
+adverb
+gloss bad
 
 
 @mano
@@ -38,6 +58,13 @@ c me
 c mme
 bv m'
 bv mm'
+
+
+@mese
+noun
+gloss month
+ms mese
+mp mise
 
 
 @metté

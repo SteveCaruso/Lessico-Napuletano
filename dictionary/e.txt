@@ -20,14 +20,14 @@ gloss to be
 aux èssere
 
 present
-1s sogno
+1s sogno,songo
 1s so'
 note causes doubling of the next consonant
 2s sî,sì,si'
 3s è
 1p simmo
 2p site
-3p sogno
+3p sogno,songo
 3p so'
 note causes doubling of the next consonant
 3p songono,sógnono
@@ -43,12 +43,12 @@ note older form
 3s era, ira
 1p èramo
 2p ìreve, jèreve
-3p èrano
+3p èrano, erano
 
 remote
 1s fuje, fui
 2s fuste
-3s fuje, fove, fu
+3s fuje, fuie, fove, fu
 1p fùjemo,fujemo
 2p fùsteve,fusteve
 3p fujeno,fùrono

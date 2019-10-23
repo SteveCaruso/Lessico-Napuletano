@@ -1,3 +1,21 @@
+@janco
+noun
+gloss the color white
+ms janco
+
+adjective
+gloss white
+ms janco
+fs janca
+p jance
+
+
+@jettatura
+noun
+gloss jynx, curse
+fs jettatura
+
+
 @jì
 alt ì,ghì,annare
 verb

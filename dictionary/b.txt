@@ -1,3 +1,23 @@
+@banca
+noun
+gloss pew, bench
+fs banca
+fp banche
+
+
+@bare
+noun
+gloss The city of Bari in Puglia
+ms Bare
+
+
+@bbancarello
+noun
+gloss booth, stand
+note Likely derived from <a href="#banca">banca</a>.
+p bbancarelle
+
+
 @bello
 alt bbello
 adjective
@@ -7,12 +27,22 @@ msbc bellu
 fs bella
 p belle
 
+
+@brutto
+adjective
+gloss ugly
+ms brutto
+fs brutta
+p brutte
+
+
 @buono
 adjective
 gloss good, fair
 ms buono
-fs buona
-p buone
+fs bona
+mp buone
+fp bone(?)
 
 
 @buordo

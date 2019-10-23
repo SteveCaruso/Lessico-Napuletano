@@ -1,3 +1,15 @@
+@saette
+noun
+gloss lightning, thunderbolt
+fp saette
+
+
+@sango
+noun
+gloss blood
+ms sango
+
+
 @santo
 adjective
 gloss saint
@@ -20,6 +32,15 @@ c se
 bv s'
 
 
+@sentì
+verb
+gloss to feel
+gloss to hear
+
+present
+2s siente
+
+
 @sempe
 adverb
 gloss always
@@ -32,6 +53,12 @@ gloss without
 preposition
 gloss without, -less
 cite senza valore = worthless
+
+
+@sera
+noun
+gloss night
+fs sera
 
 
 @si
@@ -78,6 +105,11 @@ present
 1s sto,stonco
 2s staje
 
+imperfect
+3s steva
+cite {'O lucciano d''o rre} 33.a: steva 'nfrennesìa? = was he in delerium?
+3s stava
+
 
 @stesso
 adjective
@@ -95,3 +127,18 @@ note Sometimes used before vowels or definite articles.
 
 adverb
 gloss all the same, just the same, anyways
+
+
+@strata
+noun
+gloss street, road
+fs strata
+
+
+@sujo
+pronoun
+gloss possessive 3rd person singular: his, her, its
+ms sujo,suio
+fs soja,soia
+mp suoje,suoie
+fp soje,soie
