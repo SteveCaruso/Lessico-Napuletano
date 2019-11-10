@@ -3,6 +3,29 @@ conjunction
 gloss but
 
 
+@maggio
+noun
+gloss the month of May
+ms maggio
+
+
+@magnà
+xref mangià
+verb
+gloss to eat
+aux avé
+
+
+@mangià
+xref magnà
+verb
+gloss to eat
+aux avé
+
+present
+2s mange
+
+
 @maistà
 name
 gloss Your Majesty
@@ -48,6 +71,13 @@ fp mane, mani
 noun
 gloss sea
 ms mare
+
+
+@malaurio
+alt malaùrio
+noun
+gloss ill or bad omen
+ms malaurio
 
 
 @me

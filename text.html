@@ -123,13 +123,24 @@
         var idx = '';
 
         //Build index
-        if (toc.length > 0) idx = `<div id="toc"><h2>Table of Contents:</h2>${toc.map( item => {
-            return `<div><a href="#`+item.replace(/\#/gi, "")+`">`+ item.replace(/^#+/gi, (a)=> {
-                return `&nbsp;&nbsp;&nbsp;&nbsp;`.repeat(a.length-1);
-            })+`</a></div>`;
-        }).join('\n')}</div>`;
+        if (toc.length > 0) {
+            
+            idx += '<input id="tocVisible" class="switch" type="checkbox">';
+
+            idx += `<div id="toc">
+                <label for="tocVisible" id="closeTOC">✕</label>
+                <h2>Table of Contents:</h2>
+                <div id="tocBody">${toc.map( item => {
+                return `<div><a href="#`+item.replace(/\#/gi, "")+`">`+ item.replace(/^#+/gi, (a)=> {
+                    return `&nbsp;&nbsp;&nbsp;&nbsp;`.repeat(a.length-1);
+                })+`</a></div>`;
+            }).join('\n')}</div>
+            </div>`;
+
+            idx += `<label id="openTOC" for="tocVisible">Open TOC</label>`;
+        }
         
-        return intro + result + idx;
+        return idx + intro + result;
         
     }
     
@@ -161,74 +172,6 @@
         document.querySelector("#result").innerHTML = display;
         
     }
-
-    /*
-    async function displayIndex() {
-
-        //Grab the appropriate text file
-        let ind = await fetch('texts/index.json');
-
-        //Turn the data into an object
-        data = await ind.json();
-
-        //Basic sort
-        data = data.sort((a,b) => {
-            if (a.year == b.year) {
-                if (a.title == b.title) {
-                    return parseInt(a.order) - parseInt(b.order);
-                }
-                else if (a.title > b.title) return 1;
-                else if (a.title < b.title) return -1;
-                else return 0;
-            }
-            else {
-                return parseInt(a.year) - parseInt(b.year);
-            }
-        });
-
-        //Set up the index display
-        var result = `<h1>Index of Texts:</h1>`;
-
-        result += `<table border="1">
-            <tr>
-                <th>Title:</th>
-                <th>Year:</th>
-                <th>&nbsp;</th>
-                <th>Author:</th>
-            </tr>`;
-
-            //Some metrics
-            var authorCount = {};
-
-            //Display each text
-            for (var i in data) {
-
-                var fnam = data[i]["file"].split(".")[0];
-
-                result += `<tr>
-                    <td><a href="text.html?${fnam}">${data[i]["title"]} ${data[i]["section"]?'-('+data[i]["order"]+') '+data[i]["section"]:''}</a></td>
-                    <td>${data[i]["year"]}</td>
-                    <td>${data[i]["audio"]?"🔈":""}</td>
-                    <td>${data[i]["author"]}</td>
-                </tr>`;
-
-                if (authorCount[data[i]["author"]])
-                    authorCount[data[i]["author"]]++;
-                else
-                    authorCount[data[i]["author"]] = 1;
-
-            }
-
-        result += `</table>`;
-
-        //Display the metrics
-        result += `<p>${data.length} entries and ${Object.keys(authorCount).length} authors.</p>`;
-
-        //Post the results
-        document.querySelector("#result").innerHTML = result;
-
-    }
-    */
 
     //Set the event listener
     window.addEventListener("load",lookup);

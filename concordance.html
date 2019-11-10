@@ -70,6 +70,8 @@
 
         //Strip and collate
         words = Object.values(words);
+
+        intro += `<h2> ${words.length} words:</h2>`;
         
         //Sort the results
         words = words.sort((a,b)=>{

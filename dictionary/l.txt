@@ -12,6 +12,19 @@ gloss In {'O luciano d''o rre}: <a href="https://en.wikipedia.org/wiki/Vincenzo_
 c Lanza
 
 
+@lassà
+alt lascià
+verb
+gloss to leave
+aux avé
+
+
+@lecce
+name
+gloss The city of <a href="https://en.wikipedia.org/wiki/Lecce" target="_blank">Lecce</a> in southern Apulia.
+c Lecce
+
+
 @libberale
 adjective
 gloss liberal
@@ -35,6 +48,16 @@ xref 'o
 @llà
 adverb
 gloss there
+
+
+@lloro
+alt loro, llòro, lòro
+pronoun
+gloss singular 3rd person personal: they
+gloss singular 3rd person dative: them
+gloss singular 3rd person possessive: their
+gloss singular 3rd person prepositional: them
+c lloro
 
 
 @lucia

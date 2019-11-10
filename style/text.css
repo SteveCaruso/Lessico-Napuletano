@@ -14,13 +14,44 @@ a:hover {
     border-radius:3px;
 }
 #toc {
-    position:absolute;
-    right:10px;
-    top:10px;
+    float:right;
+    background-color:white;
+    margin-left:10px;
     border-radius:5px;
     border:1px solid gray;
-    padding-left:2em;
-    padding-right:2em;
     font-weight:bold;
     padding-bottom:2em;
 }
+#tocBody, #toc h2 {
+    padding-left: 30px;
+    padding-right:30px;
+}
+
+
+.switch {
+    display:none;
+}
+
+#closeTOC, #openTOC {
+    float:right;
+    border-radius:5px;
+    border:1px solid gray;
+    padding:5px;
+    line-height:90%;
+    margin:10px;
+}
+#openTOC {
+    display:none;
+}
+#tocVisible:not(:checked) ~ #openTOC {
+    display:block;
+}
+#closeTOC:hover, #openTOC:hover {
+    color:white;
+    background-color:gray;
+    cursor:pointer;
+}
+#tocVisible:not(:checked) ~ #toc {
+    display:none;
+}
+

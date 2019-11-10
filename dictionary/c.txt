@@ -209,6 +209,7 @@ bv chist', chest', st'
 
 
 @cu
+alt co
 preposition
 gloss with
 gloss together

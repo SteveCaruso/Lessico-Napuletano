@@ -28,7 +28,7 @@
                 document.querySelector("#status").innerHTML += " "+fname;
 
                 //Grab the appropriate text file
-                let result = await fetch('texts/'+fname);
+                let result = await fetch('../texts/'+fname);
 
                 let meta = {"file":fname};
 

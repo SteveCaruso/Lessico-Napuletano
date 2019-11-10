@@ -65,8 +65,8 @@ gloss live!
 noun
 gloss defect
 gloss vice, bad habit
-nm vizio
-np vizie
+ms vizio
+p vizie
 
 @vota
 noun
